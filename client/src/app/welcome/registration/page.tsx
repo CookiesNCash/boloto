@@ -3,7 +3,7 @@ import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Image from 'next/image'
-import DropDownDate from '../components/DropDownDate';
+import DropDownDate from '../../components/DropDownDate';
 
 const month = ['Январь','Феврал','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь',]
 const day = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31]
@@ -28,6 +28,7 @@ function BasicExample() {
 
       </div>
       <Form>
+      <div className='h3'>Создать новый аккаунт</div>
       <div className='registration-name'>
         <Form.Group className="mb-1" controlId="name">
         <Form.Control type="email" placeholder="Имя" />
@@ -37,7 +38,6 @@ function BasicExample() {
         </Form.Group>
       </div>
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <div className='h3'>Создать новый аккаунт</div>
         <Form.Control type="email" placeholder="Enter email" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="formBasicPassword">
