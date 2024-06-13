@@ -114,7 +114,7 @@ body {
   width: 500px;
   margin: 10% auto;
   padding: 10px;
-  box-shadow:4px 4px 15px rgba(0, 0, 0, 0.2);
+    box-shadow:4px 4px 15px rgba(0, 0, 0, 0.2);
 }
 .line-break {
   white-space: pre-line;
@@ -173,7 +173,7 @@ body {
   border-right: 1px black inset;
   display: flex;
   flex-direction: column;
-
+  
 
 }
 .navbar-nav {
@@ -227,6 +227,7 @@ flex-direction: column;
 }
 .card {
   margin: 10px 0;
+  box-shadow:4px 4px 15px rgba(0, 0, 0, 0.2);
 }
 .photo-author{
   width: 35px;
@@ -249,7 +250,7 @@ flex-direction: column;
   justify-content: space-between;
   margin-top: 25px;
 }
-.btn-reactions {
+.btn-reactions, .static-reactions{
   display: flex;
   gap: 20px;
 }
@@ -257,6 +258,36 @@ flex-direction: column;
   display: flex;
   align-items: center;
   gap: 5px;
+}
+.profile {
+  padding-left: 10px;
+  display: flex;
+  border-radius: 30px;
+  border: #808080 1px inset;
+  gap: 10px;
+  align-items: center;
+  max-width: 250px;
+  margin-bottom: 15px;
+}
+.user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.tripleDot {
+margin-left: 50px;
+margin-right: 10px;
+}
+.nav-header-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.profile-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 /* 
 @media (prefers-color-scheme: dark) {
