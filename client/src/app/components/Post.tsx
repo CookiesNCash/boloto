@@ -1,5 +1,9 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { FaRegHeart } from "react-icons/fa";
+import { FaRegCommentAlt } from "react-icons/fa";
+import { FaCommentAlt } from "react-icons/fa";
+import { GrView } from "react-icons/gr";
 
 export default function Post ({text, img, author}) {
     const {id, photo, name} = author;
@@ -19,8 +23,22 @@ export default function Post ({text, img, author}) {
              {text}
             </Card.Text>
           <Card.Img variant="top" src={img} />
-          <Card.Body>
-          </Card.Body>
+          <div className='all-reactions'>
+            <div className='btn-reactions'>
+              <div className='reactions like'>
+              <FaRegHeart />
+              <span>100</span>
+              </div>
+              <div className='reactions like'>
+              <FaRegCommentAlt />
+              <span>100</span>
+              </div>
+            </div>
+            <div className='static-reactions'>
+              <GrView />
+              <span>10000</span>
+            </div>
+          </div>
         </Card>
       );
 }

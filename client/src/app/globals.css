@@ -244,6 +244,20 @@ flex-direction: column;
   color: rgb(113, 118, 123);
   text-decoration: none;
 }
+.all-reactions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.btn-reactions {
+  display: flex;
+  gap: 20px;
+}
+.reactions {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
 /* 
 @media (prefers-color-scheme: dark) {
   html {
