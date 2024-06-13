@@ -8,6 +8,8 @@ import { MdNotificationsNone } from "react-icons/md";
 import { IoHomeOutline } from "react-icons/io5";
 import { IoNewspaperOutline } from "react-icons/io5";
 import ProfileNav from "./ProfileNav";
+import { useSelector } from "react-redux";
+import {selectAllPosts} from '../slices/postsSlice';
 
 export default function Header () {
     return (
@@ -51,9 +53,7 @@ export default function Header () {
             <div className="profile-div">
                 <ProfileNav user={{name: 'Андрей', photo:'./Андрей.jpeg', id:'@teregiray'}}></ProfileNav>
             </div>
-             
-           </div>
-             
+           </div>   
         </header>
     )
 }

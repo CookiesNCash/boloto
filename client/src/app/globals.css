@@ -193,9 +193,8 @@ flex-direction: column;
 }
 .div-nav {
   display: flex;
-  justify-content: center;
-  gap: 5px ;
-  align-items:center;
+  gap: 5px;
+  align-items: center;
 }
 @media (min-width: 1400px) {
   .navbar-expand-xxl .navbar-nav {
