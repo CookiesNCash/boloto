@@ -26,17 +26,17 @@ export default function CreatePost() {
 
     return (
         <div className='createPost'>
-        <Form.Label htmlFor="">Создать Пост</Form.Label>
+        <Form.Label htmlFor="">Создать бульк</Form.Label>
         <Form.Control
           type="text"
           id="text-post"
-          placeholder='Что произошло?!'
+          placeholder='О чем булькать будешь?!'
           value={postContent}
           onChange={(e) => setPostContent(e.target.value)}
         />
         <div className='control-createPost'>
             <ModalImg onImageSelect={handleImageSelect}/>
-            <Button onClick={createPost} variant="primary">Создать</Button>
+            <Button onClick={createPost} variant="primary">булькнуть</Button>
         </div>
       </div>
     );

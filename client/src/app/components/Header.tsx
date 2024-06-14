@@ -32,11 +32,11 @@ export default function Header () {
               <Nav className="me-auto">
                 <div className="div-nav">
                 <IoHomeOutline />
-                <Nav.Link href="#home">Моя Страница</Nav.Link>
+                <Nav.Link href="#home">Моё болото</Nav.Link>
                 </div>
                 <div className="div-nav">
                 <FiMessageCircle />
-                <Nav.Link href="#message">Сообщение</Nav.Link>
+                <Nav.Link href="#message">Кваки</Nav.Link>
                 </div>
                 <div className="div-nav">
                 <MdNotificationsNone/>
