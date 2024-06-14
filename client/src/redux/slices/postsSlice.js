@@ -1,10 +1,9 @@
 import { createSlice, createEntityAdapter} from '@reduxjs/toolkit';
 
-
 const postsAdapter = createEntityAdapter();
 const initialState = postsAdapter.getInitialState({
-    // Добавление начального списка товаров
-  });
+    ids: [],
+});
 
 const postsSlice = createSlice({
     name: 'posts',

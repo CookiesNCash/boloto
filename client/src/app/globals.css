@@ -218,6 +218,7 @@ flex-direction: column;
 .control-createPost {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
 }
 .add-img {
@@ -287,6 +288,14 @@ margin-right: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.modal-Form {
+  padding-bottom: 30px;
+}
+.btn-modal {
+ position: relative;
+ top: 25px;
+ left: 87%;
 }
 /* 
 @media (prefers-color-scheme: dark) {
