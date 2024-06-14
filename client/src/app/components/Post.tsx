@@ -35,9 +35,11 @@ export default function Post ({text, img, author}) {
               </div>
             </div>
             <div className='static-reactions'>
+              <div className='reactions'>
               <GrView />
               <span>10000</span>
-            </div>
+              </div>
+            </div> 
           </div>
         </Card>
       );
