@@ -303,17 +303,29 @@ margin-right: 10px;
  top: 25px;
  left: 87%;
 }
+.modal-btn {
+  display: flex;
+  gap: 5px;
+}
+.hashTag{
+  text-overflow: unset;
+  color: rgb(29, 155, 240);
+}
+.text-post{
+  text-align: start;
+}
 .btn-reaction-animation {
-  text-align: center;
-  width: 25px;
-  height: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   transition:  0.5s ease-in-out;
 }
 
-
-.greenAn:hover {
-  background-color: #53e3ff;
+.blueAn:hover {
+  background-color: rgba(83,	227,	255, 0.7)
 }
 
 
@@ -357,9 +369,47 @@ margin-right: 10px;
   align-items: center;
 }
 
-/* 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-} */
+.rightColumn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-left: 1px black inset;
+}
+.recommendations {
+  border: #808080 1px inset;
+  border-radius: 10px;
+  margin-left: 15px;
+  width: 250px;
+  height: auto;
+  padding: 0 5px 20px 5px;
+}
+.trend {
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  margin: 5px 0px 0 5px;
+  padding: 2px;
+  gap: 2px;
+}
+.count-post {
+  font-size: 10px;
+  color: rgb(113, 118, 123);
+}
+.headline-rec {
+  margin: 10px 0;
+  font-weight: 400;
+  font-size: 18px;
+}
+.allTopics {
+  margin-top: 10px;
+}
+.hover-btn-grey:hover {
+  background-color: rgba(128, 128, 128, 0.1)
+}
+.no-select {
+  -webkit-user-select: none; /* Для Safari */
+  -moz-user-select: none;    /* Для Firefox */
+  -ms-user-select: none;     /* Для IE и Edge */
+  user-select: none;         /* Стандартное свойство */
+}

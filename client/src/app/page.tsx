@@ -39,7 +39,7 @@ function BasicExample() {
       </div>
       <div className='create-acc'>
         <p>Нет аккаунта?</p>
-        <a className='sing-up' href="#">Создать аккаунт</a>
+        <a className='sing-up' href="./boloto/welcome">Создать аккаунт</a>
       </div>
     </Form>
     </div>

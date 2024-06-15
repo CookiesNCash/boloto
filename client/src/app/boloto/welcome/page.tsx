@@ -81,7 +81,7 @@ function BasicExample() {
       </Button>
       </div>
       <div className='create-acc'>
-        <a className='sing-up' href="#">Уже есть аккаунт?</a>
+        <a className='sing-up' href="../../">Уже есть аккаунт?</a>
       </div>
     </Form>
     </div>

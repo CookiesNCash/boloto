@@ -1,7 +1,8 @@
 import Card from 'react-bootstrap/Card';
-import AllReactions from './reactions/AllReactions'
+import AllReactions from '../reactions/AllReactions'; 
+import AllHashtag from './AllHashtag';
 
-export default function Post ({text, img, author}) {
+export default function Post ({text, img, author,tag}) {
     const {id, photo, name} = author;
 
     return (
@@ -16,10 +17,11 @@ export default function Post ({text, img, author}) {
             {id}
        </a>
          </div>
-         <Card.Text>
-             {text}
-            </Card.Text>
-          <Card.Img variant="top" src={img} />
+         <div className='text-post'>
+         <Card.Text>{text}</Card.Text>
+         <AllHashtag tag={tag} />
+         </div>
+        <Card.Img variant="top" src={img} />
         <AllReactions />
         </Card>
       );

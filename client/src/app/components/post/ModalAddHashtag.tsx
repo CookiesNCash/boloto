@@ -1,24 +1,24 @@
 import { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import { MdOutlinePermMedia } from "react-icons/md";
+import { GoHash } from "react-icons/go";
 import Form from "react-bootstrap/Form"
 import Button  from 'react-bootstrap/Button';
 
-export default function ModalImg({onImageSelect}) {
+export default function AddHashtag({handleHashtagSelect}) {
   const [lgShow, setLgShow] = useState(false);
-  const [url, setUrl] = useState('');
+  const [hashtag, sethashtag] = useState('');
 
   const handleClose = () => setLgShow(false);
 
-  const handleImageSelect = (image) => {
-    onImageSelect(image);  // Вызов функции обратного вызова с выбранным изображением
+  const handleImageSelect = (hashTag) => {
+    handleHashtagSelect(hashTag);  // Вызов функции обратного вызова с выбранным изображением
     handleClose();
   };
 
   return (
     <>
-     <div className='btn'>
-     <MdOutlinePermMedia onClick={() => setLgShow(true)} className='add-img'/>
+     <div className='btn hover-btn-grey'>
+     <GoHash onClick={() => setLgShow(true)} className='add-img'>#</GoHash>
      </div>
       <Modal
         size="lg"
@@ -28,18 +28,18 @@ export default function ModalImg({onImageSelect}) {
       >
         <Modal.Header closeButton>
           <Modal.Title id="example-modal-sizes-title-lg">
-          Добавьте url на изображение
+          Добавьте хештег
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className='modal-Form'>
         <Form.Control
                 type="src"
-                placeholder="https://example.top/uploads/posts"
+                placeholder="#Bts"
                 autoFocus
-                value={url}
-                onChange={(e) => setUrl(e.target.value)}
+                value={hashtag}
+                onChange={(e) => sethashtag(e.target.value)}
               />
-        <Button onClick={() => handleImageSelect(url)} className='btn-modal' variant="primary">загрузить</Button>
+        <Button onClick={() => handleImageSelect(hashtag)} className='btn-modal' variant="primary">Добавить</Button>
         </Modal.Body>
       </Modal>
     </>

@@ -3,11 +3,10 @@ import cn from 'classnames';
 
 export default function Like() {
     const [haveLike, setHaveLike] = useState(false);
-    
 
     const classLikeIcon = cn('heart-icon', {
         liked: haveLike,
-    })
+    });
 
     return (
         <div className='reactions'>
