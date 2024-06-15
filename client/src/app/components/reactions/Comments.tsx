@@ -4,7 +4,9 @@ import { FaCommentAlt } from "react-icons/fa";
 export default function Comments() {
     return (
         <div className='reactions Comments'>
-        <FaRegCommentAlt />
+            <div className="btn-reaction-animation greenAn">
+                <FaRegCommentAlt />
+                </div>
         <span>100</span>
         </div>
     );
