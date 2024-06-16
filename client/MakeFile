@@ -1,0 +1,4 @@
+dev:
+	npm run dev
+fix-lint:
+	npx eslint --fix .

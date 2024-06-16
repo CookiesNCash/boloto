@@ -5,29 +5,35 @@ import { addPost } from '../../../redux/slices/postsSlice';
 import React, { useState } from 'react';
 import {useDispatch} from 'react-redux';
 import ModalImg from './ModalAddImg';
-import AddHashtag from './ModalAddHashtag';
+
 
 export default function CreatePost() {
   const dispatch = useDispatch();
 
   const [postContent, setPostContent] = useState("");
   const [postImage, setPostImage] = useState("");
-  const [postHashtag, sethashtag] = useState("");
 
   const handleImageSelect = (image) => {
     setPostImage(image); // Обновление состояния выбранным URL изображения
   }
-  const handleHashtagSelect = (hashtag) => {
-    sethashtag(hashtag); // Обновление состояния выбранным URL изображения
-  }
   
+  const splitHashTag = () => {
+
+    const hashtagPattern = /#[\S]+/g;
+    const hashtags = postContent.match(hashtagPattern) || [];
+    const textWithoutHashtags = postContent.replace(hashtagPattern, '').trim();
+
+    return [textWithoutHashtags, hashtags]
+  }
+
   const createPost = (e) => {
     e.preventDefault();
-    const newPost = { id: Date.now().toString(), content: postContent, img: postImage, hasTag: postHashtag,}
+    const [textWithoutHashtags, hashtags] = splitHashTag();
+    const newPost = { id: Date.now().toString(), content: textWithoutHashtags, img: postImage, hasTag: hashtags,}
     dispatch(addPost(newPost));
     setPostContent(""); 
   }
-  console.log(postHashtag)
+  
     return (
         <div className='createPost'>
         <Form.Label htmlFor="">Создать бульк</Form.Label>
@@ -41,7 +47,6 @@ export default function CreatePost() {
         <div className='control-createPost'>
           <div className='modal-btn'>
             <ModalImg onImageSelect={handleImageSelect}/>
-            <AddHashtag handleHashtagSelect={handleHashtagSelect}></AddHashtag>           
           </div>
              <Button onClick={createPost} variant="primary">булькнуть</Button>
         </div>

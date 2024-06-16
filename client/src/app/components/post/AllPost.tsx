@@ -19,7 +19,7 @@ export default function AllPost () {
                     text={el.content}
                     img={el.img}
                     tag={el.hasTag}
-                    author={{ name: 'Иоан', photo: './Иоан.jpeg', id: '@pro100cowboyyyyyyyJoeBidenyyyyyy' }}
+                    author={{ name: 'Иоан', photo: '../Иоан.jpeg', id: '@pro100cowboyyyyyyyJoeBidenyyyyyy' }}
                 />
             ))}
         </>

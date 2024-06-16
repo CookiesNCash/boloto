@@ -1,7 +1,7 @@
 export default function HashTag ({tag}) {
     return (
-        <div className="hashTag">
+        <a href="#" className="hashTag">
             {tag}
-        </div>
+        </a>
     );
 }
