@@ -14,7 +14,7 @@ export default function AllPost() {
 
   return (
     <>
-      {allPostArray.map((el) => (
+      {allPostArray.reverse().map((el) => (
         <Post
           key={el.id}
           text={el.content}
