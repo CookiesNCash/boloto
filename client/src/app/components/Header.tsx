@@ -11,21 +11,22 @@ import ProfileNav from "./ProfileNav";
 export default function Header() {
   return (
     <header className="header">
-      <div className="header-logo">
-        <Image
-          className="logo"
-          src="/logo.jpeg"
-          alt="Vercel Logo"
-          width={50}
-          height={50}
-          priority
-        />
-        <p>Болото</p>
-      </div>
+   
       <div className="nav-header-flex">
-        <div>
-          <Navbar expand="xxl" className="bg-body-tertiary header-nav bg-black">
+        <div className="centerDiv">
+        <Navbar expand="xxl" className="bg-body-tertiary header-nav bg-black">
             <Container className="header-nav">
+            <div className="header-logo">
+            <Image
+              className="logo"
+             src="/logo.jpeg"
+              alt="Vercel Logo"
+              width={50}
+              height={50}
+              priority
+             />
+            <span className="logo-name">Болото</span>
+           </div>
               <Nav className="me-auto">
                 <div className="div-nav">
                   <IoHomeOutline />
@@ -47,6 +48,8 @@ export default function Header() {
             </Container>
           </Navbar>
         </div>
+         
+        
         <div className="profile-div">
           <ProfileNav
             user={{ name: "Андрей", photo: "../Андрей.jpeg", id: "@teregiray" }}

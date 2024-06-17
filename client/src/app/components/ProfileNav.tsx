@@ -4,7 +4,7 @@ export default function ProfileNav({ user }) {
   const { id, name, photo } = user;
 
   return (
-    <div className="profile">
+    <div className="profile bg-black">
       <img className="photo-author" src={photo} alt="аватар" />
       <div className="user-info">
         <span>{name}</span>
