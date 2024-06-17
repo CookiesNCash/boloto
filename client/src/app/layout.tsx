@@ -18,10 +18,12 @@ export default function RootLayout({
 }>) {
   return (
     <>
-    <link rel="icon" href="/logo.png" sizes="any"/>
-    <html lang="en">
-      <body className={inter.className}><ReduxProvider>{children}</ReduxProvider></body>
-    </html>
+      <link rel="icon" href="/logo.png" sizes="any" />
+      <html lang="en">
+        <body className={inter.className}>
+          <ReduxProvider>{children}</ReduxProvider>
+        </body>
+      </html>
     </>
   );
 }

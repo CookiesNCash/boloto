@@ -5,53 +5,54 @@ import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import { FiMessageCircle } from "react-icons/fi";
 import { MdNotificationsNone } from "react-icons/md";
-import { IoHomeOutline } from "react-icons/io5";
-import { IoNewspaperOutline } from "react-icons/io5";
+import { IoHomeOutline, IoNewspaperOutline } from 'react-icons/io5';
 import ProfileNav from "./ProfileNav";
 
-export default function Header () {
-    return (
-        <header className="header">
-            <div className="header-logo">
-                <Image
-                className='logo'
-                src="/logo.png"
-                alt="Vercel Logo"
-                width={50}
-                height={50}
-                priority
-            />
-            <p>Болото</p>
-            </div>
-           <div className="nav-header-flex">
-            <div>
-            <Navbar expand="xxl" className="bg-body-tertiary header-nav">
-              <Container className='header-nav'>
+export default function Header() {
+  return (
+    <header className="header">
+      <div className="header-logo">
+        <Image
+          className="logo"
+          src="/logo.png"
+          alt="Vercel Logo"
+          width={50}
+          height={50}
+          priority
+        />
+        <p>Болото</p>
+      </div>
+      <div className="nav-header-flex">
+        <div>
+          <Navbar expand="xxl" className="bg-body-tertiary header-nav">
+            <Container className="header-nav">
               <Nav className="me-auto">
                 <div className="div-nav">
-                <IoHomeOutline />
-                <Nav.Link href="#home">Моё болото</Nav.Link>
+                  <IoHomeOutline />
+                  <Nav.Link href="#home">Моё болото</Nav.Link>
                 </div>
                 <div className="div-nav">
-                <FiMessageCircle />
-                <Nav.Link href="#message">Кваки</Nav.Link>
+                  <FiMessageCircle />
+                  <Nav.Link href="#message">Кваки</Nav.Link>
                 </div>
                 <div className="div-nav">
-                <MdNotificationsNone/>
-                <Nav.Link href="#notifications">Уведомление</Nav.Link>
+                  <MdNotificationsNone />
+                  <Nav.Link href="#notifications">Бульки</Nav.Link>
                 </div>
                 <div className="div-nav">
-                <IoNewspaperOutline />
-                <Nav.Link href="#profile">Новости</Nav.Link>     
+                  <IoNewspaperOutline />
+                  <Nav.Link href="#profile">Жижа</Nav.Link>
                 </div>
               </Nav>
-              </Container>
-             </Navbar>
-            </div>
-            <div className="profile-div">
-                <ProfileNav user={{name: 'Андрей', photo:'../Андрей.jpeg', id:'@teregiray'}}></ProfileNav>
-            </div>
-           </div>   
-        </header>
-    )
+            </Container>
+          </Navbar>
+        </div>
+        <div className="profile-div">
+          <ProfileNav
+            user={{ name: "Андрей", photo: "../Андрей.jpeg", id: "@teregiray" }}
+          />
+        </div>
+      </div>
+    </header>
+  );
 }
