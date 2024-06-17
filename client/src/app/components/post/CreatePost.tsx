@@ -36,6 +36,7 @@ export default function CreatePost() {
     };
     dispatch(addPost(newPost));
     setPostContent("");
+    setPostImage("")
   };
 
   return (
