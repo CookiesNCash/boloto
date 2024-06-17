@@ -1,24 +1,23 @@
 import Topic from "./Topic";
 
 export default function () {
-    return (
+  return (
     <div className="recommendations">
-        <div className="headline-rec">
-            <span>Популярные хештеги</span>
-        </div>
-        <div className="allTopics">
-         <Topic />
-         <Topic />
-         <Topic />
-         <Topic />
-         <Topic />
-         <Topic />
-         <Topic />
-         <Topic />
-         <Topic />
-         <Topic />
-        </div>
-     
+      <div className="headline-rec">
+        <span>Популярные хештеги</span>
+      </div>
+      <div className="allTopics">
+        <Topic />
+        <Topic />
+        <Topic />
+        <Topic />
+        <Topic />
+        <Topic />
+        <Topic />
+        <Topic />
+        <Topic />
+        <Topic />
+      </div>
     </div>
-    )
+  );
 }
