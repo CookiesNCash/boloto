@@ -22,7 +22,9 @@ model User {
   firstName String?
   lastName  String?
 
-  posts      Post[]
+  
+
+  // posts      Post[]
 
   @@map("users")
 }
@@ -32,12 +34,12 @@ model Post {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   text      String?
-  likes     Int
-  views     Int
+  likes     Int @default(0)
+  views     Int @default(0)
   image     String?
 
   userId Int
-  user   User @relation(fields: [userId], references: [id])
+  // user   User @relation(fields: [userId], references: [id])
 
   @@map("posts")
 }
