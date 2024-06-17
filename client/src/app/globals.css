@@ -22,7 +22,7 @@ a {
   width: 500px;
   margin: 10% auto;
   padding: 10px;
-    box-shadow:4px 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow:4px 4px 15px rgba(0, 0, 0, 0.2);
 }
 .line-break {
   white-space: pre-line;
@@ -78,7 +78,7 @@ a {
   justify-content: space-evenly;
 }
 .header {
-  border-right: 1px black inset;
+  /* border-right: 1px black inset; */
   display: flex;
   flex-direction: column;
 }
@@ -124,7 +124,7 @@ flex-direction: column;
 }
 .createPost {
   padding: 5px 20px;
-  border: #808080 1px inset;
+  /* border: #808080 1px inset; */
   border-radius: 10px;
 }
 #text-post {
@@ -312,12 +312,12 @@ margin-right: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-left: 1px black inset;
+  /* border-left: 1px black inset; */
 }
 .recommendations {
   color: azure;
   background-color: #131711;
-  border: #808080 1px inset;
+  /* border: #808080 1px inset; */
   border-radius: 10px;
   margin-left: 15px;
   width: 250px;
