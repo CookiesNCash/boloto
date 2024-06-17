@@ -39,8 +39,8 @@ export default function CreatePost() {
     setPostImage("")
   };
 
-  return (
-    <div className="createPost">
+  return ( 
+    <div className="createPost bg-black">
       <Form.Label htmlFor="">Вылить жижу</Form.Label>
       <Form.Control
         type="text"

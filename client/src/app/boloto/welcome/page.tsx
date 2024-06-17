@@ -1,10 +1,11 @@
 "use client";
-
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Image from 'next/image';
 import DropDownDate from '../../components/DropDownDate';
+import { useState } from 'react';
+import axios from 'axios';
 
 const month = [
   'Январь',
@@ -20,18 +21,29 @@ const month = [
   'Ноябрь',
   'Декабрь',
 ];
+
 const day = [
   1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22,
   23, 24, 25, 26, 27, 28, 29, 30, 31,
 ];
+
 const years = [2024];
 for (let year = 2023; year >= 1950; year--) {
   years.push(year);
 }
 
-function BasicExample() {
+export default function BasicExample() {
+
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  
+  const signUpBtn = async (e) => {
+    e.preventDefault();
+    await axios.post(`${process.env.NEXT_PUBLIC_HOST_URL}/auth/auth/signup`, {email, password});
+  }
+
   return (
-    <div className="form-div">
+    <div className="form-div">  
       <div className="logo-div">
         <Image
           className="logo"
@@ -53,10 +65,10 @@ function BasicExample() {
           </Form.Group>
         </div>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Control type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter email" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Control type="password" placeholder="New password" />
+          <Form.Control type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="New password" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="repeatFormBasicPassword">
           <Form.Control type="password" placeholder="Repeat password" />
@@ -91,7 +103,7 @@ function BasicExample() {
         </div>
 
         <div className="d-grid gap-2">
-          <Button variant="primary" type="submit">
+          <Button variant="primary" type="submit" onClick={(e) => signUpBtn(e)}>
             Создать
           </Button>
         </div>
@@ -104,5 +116,4 @@ function BasicExample() {
     </div>
   );
 }
-
-export default BasicExample;
+ 

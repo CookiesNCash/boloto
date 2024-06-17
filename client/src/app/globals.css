@@ -178,9 +178,15 @@ a {
   border-right: 1px black inset;
   display: flex;
   flex-direction: column;
-  
-
 }
+.bg-black {
+  color: azure;
+  background-color: #131711;
+}
+.nav-link {
+  color: inherit;
+}
+
 .navbar-nav {
   display: flex;
   flex-direction: column;
@@ -195,6 +201,7 @@ flex-direction: column;
   display: grid;
   grid-template-columns: 0.3fr 1fr 0.5fr; /* 200px for header, remaining space for main */
   height: 100vh; /* Full viewport height */
+  background: url('../../public/background.jpg');
 }
 .div-nav {
   display: flex;
@@ -378,6 +385,8 @@ margin-right: 10px;
   border-left: 1px black inset;
 }
 .recommendations {
+  color: azure;
+  background-color: #131711;
   border: #808080 1px inset;
   border-radius: 10px;
   margin-left: 15px;

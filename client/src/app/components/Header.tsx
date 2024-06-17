@@ -14,7 +14,7 @@ export default function Header() {
       <div className="header-logo">
         <Image
           className="logo"
-          src="/logo.png"
+          src="/logo.jpeg"
           alt="Vercel Logo"
           width={50}
           height={50}
@@ -24,7 +24,7 @@ export default function Header() {
       </div>
       <div className="nav-header-flex">
         <div>
-          <Navbar expand="xxl" className="bg-body-tertiary header-nav">
+          <Navbar expand="xxl" className="bg-body-tertiary header-nav bg-black">
             <Container className="header-nav">
               <Nav className="me-auto">
                 <div className="div-nav">
