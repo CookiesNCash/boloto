@@ -181,7 +181,7 @@ a {
 }
 .bg-black {
   color: azure;
-  background-color: #131711;
+  background-color: #131711 !important;
 }
 .nav-link {
   color: inherit;

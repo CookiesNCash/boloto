@@ -6,7 +6,7 @@ export default function Post({ text, img, author, tag }) {
   const { id, photo, name } = author;
 
   return (
-    <Card style={{ width: "18rem" }} className="w-100 p-3">
+    <Card style={{ width: "18rem" }} className="w-100 p-3 bg-black">
       <div className="post-author">
         <Card.Img className="photo-author" variant="top" src={photo} />
 
