@@ -12,6 +12,15 @@ body {
 a {
   text-decoration: none;
 }
+input {
+  all: unset;
+  /* Затем добавьте свои стили */
+  padding: 8px;
+  font-size: 16px;
+  /* Пример дополнительных стилей */
+  border-radius: 4px;
+  text-align: center;
+}
 .logo-div{
   margin: 20px;
   text-align: center;
@@ -347,6 +356,78 @@ margin-right: 10px;
 .hover-btn-grey:hover {
   background-color: rgba(128, 128, 128, 0.1)
 }
+
+.mainChat {
+  color: azure;
+  width: 100%;
+  min-height: 80vh;
+  background-color: #131711;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  position: relative; /* Добавлено позиционирование */
+}
+.allMessage {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px 5px;
+}
+.end {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  margin-top: auto; 
+}
+.flex-messageInput {
+  display: flex;
+  justify-content: center;
+  width: 100%; 
+  margin-bottom: 20px;
+}
+.input_btn_message {
+  display: flex;
+  justify-content: space-between;
+}
+.inputMessage {
+  margin-left: 20px;
+}
+.messageInput {
+  border-radius: 15px;
+  padding: 10px;
+  background-color: #202327;
+  width: 50%;
+  max-width: 400px; 
+  position: fixed;
+  bottom: 45px; /* Отступ от нижнего края */
+}
+
+.bubble {
+  --r: 1em;  /* the radius */
+  --t: 1.5em; /* the size of the tail */
+  
+  max-width: 300px;
+  padding: 1em;
+  border-inline: var(--t) solid #0000;
+  border-radius: calc(var(--r) + var(--t))/var(--r);
+  mask: 
+    radial-gradient(100% 100% at var(--_p) 0,#0000 99%,#000 102%) 
+      var(--_p) 100%/var(--t) var(--t) no-repeat,
+    linear-gradient(#000 0 0) padding-box;
+  background: #1d9bf0;
+  color: #fff;
+}
+.left {
+  --_p: 0;
+  border-bottom-left-radius: 0 0;
+  place-self: start;
+}
+.right {
+  --_p: 100%;
+  border-bottom-right-radius: 0 0;
+  place-self: end;
+}
+
 .no-select {
   -webkit-user-select: none; /* Для Safari */
   -moz-user-select: none;    /* Для Firefox */
