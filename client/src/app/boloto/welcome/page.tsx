@@ -39,7 +39,8 @@ export default function BasicExample() {
   
   const signUpBtn = async (e) => {
     e.preventDefault();
-    // await axios.post(`${process.env.NEXT_PUBLIC_HOST_URL}/auth/auth/signup`, {email, password});
+    console.log({email, password})
+    await axios.post(`${process.env.NEXT_PUBLIC_HOST_URL}/auth/signup`, {email, password});
   }
 
   return (
@@ -47,7 +48,7 @@ export default function BasicExample() {
       <div className="logo-div">
         <Image
           className="logo"
-          src="/logo.png"
+          src="/logo.jpeg"
           alt="Vercel Logo"
           width={50}
           height={50}
