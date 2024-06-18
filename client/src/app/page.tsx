@@ -23,8 +23,8 @@ export default function logIn () {
       <div className="logo-div">
         <Image
           className="logo"
-          src="/logo.png"
-          alt="Vercel Logo"
+          src="/logo.jpeg"
+          alt=""
           width={50}
           height={50}
           priority

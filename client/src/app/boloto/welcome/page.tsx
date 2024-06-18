@@ -47,7 +47,7 @@ export default function BasicExample() {
       <div className="logo-div">
         <Image
           className="logo"
-          src="/logo.png"
+          src="./public/logo.png"
           alt="Vercel Logo"
           width={50}
           height={50}
