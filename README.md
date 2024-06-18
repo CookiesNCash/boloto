@@ -1,13 +1,12 @@
 # boloto
 
-1. 
-```make install ```
+1. ```make install ```
 
 2. ```cd server && touch .env```
 
 Добавит в server/.env
 ```
-DATABASE_URL="postgresql://postgres:myPassword@localhost:myLocalhost/myDB?schema=public"
+DATABASE_URL="postgresql://postgres:myPassword@localhost:myLocalhost/test?schema=public"
 JWT_ACCESS_SECRET='test'
 
 NEST_PORT=3001
