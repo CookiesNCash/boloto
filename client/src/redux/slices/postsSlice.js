@@ -1,8 +1,16 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// const allPost = axios.get(`${process.env.NEXT_PUBLIC_HOST_URL}/post/all`)
-// .then((response) => console.log(response));
+// const hostUrl = process.env.NEXT_PUBLIC_HOST_URL;
+// const allPost = axios.get(`${hostUrl}/post/all`, {
+//   headers: {
+//     'Authorization': `Bearer ${accessToken}`
+//   }
+// })
+// .then((response) => console.log(response.data))
+// .catch((error) => console.error('Error fetching posts:', error));
+
+
 
 // console.log(allPost)
 const postsAdapter = createEntityAdapter();

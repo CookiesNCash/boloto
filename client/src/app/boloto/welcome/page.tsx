@@ -39,7 +39,8 @@ export default function BasicExample() {
   
   const signUpBtn = async (e) => {
     e.preventDefault();
-    await axios.post(`${process.env.NEXT_PUBLIC_HOST_URL}/auth/auth/signup`, {email, password});
+    console.log({email, password})
+    await axios.post(`${process.env.NEXT_PUBLIC_HOST_URL}/auth/signup`, {email, password});
   }
 
   return (

@@ -11,12 +11,25 @@ export default function logIn () {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  
+  const [error, setError] = useState('');
   
   const logInBtn = async (e) => {
     e.preventDefault();
-    // await axios.post(`${process.env.NEXT_PUBLIC_HOST_URL}/auth/signin`, {email, password});
-  }
+    try {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_HOST_URL}/auth/signin`, {
+        email: email,
+        password: password,
+      });
+
+      console.log(response.data);
+      // Сохраняем access token в localStorage
+      const { access_token } = response.data;
+      localStorage.setItem('accessToken', access_token);
+    } catch (error) {
+      console.error('Error logging in:', error);
+      setError('Failed to log in. Please check your credentials.');
+    }
+  };
 
   return (
     <div className="form-div">
