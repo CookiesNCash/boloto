@@ -29,5 +29,6 @@ const postsSlice = createSlice({
 
 // export const selectCategory = (state, category) => Object.values(state.products.entities).filter(el => el.category === category)
 export const selectAllPosts = (state) => state.posts.entities;
+export const selectAllPosts1 = (state) => state.posts;
 export const { addPosts, addPost } = postsSlice.actions;
 export default postsSlice.reducer;

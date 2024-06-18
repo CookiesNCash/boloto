@@ -1,5 +1,5 @@
-export default function RightMessage () {
+export default function RightMessage ({children}) {
     return (
-        <div className="bubble right">Ok, Thank you</div>
+        <div className="bubble right">{children}</div>
     )
 }
