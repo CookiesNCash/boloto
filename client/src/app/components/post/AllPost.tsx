@@ -1,13 +1,12 @@
 'use client';
 
 import { useSelector } from 'react-redux';
-import { selectAllPosts, selectAllPosts1 } from '@/redux/slices/postsSlice';
+import { selectAllPosts } from '@/redux/slices/postsSlice';
 import Post from './Post';
 
 export default function AllPost() {
   const allPost = useSelector(selectAllPosts);
   const allPostArray = Object.values(allPost); // Преобразуем объект в массив
-  console.log(selectAllPosts1)
   // if (!allPostArray || allPostArray.length === 0) {
   //     return <p>Нет постов для отображения</p>;
   // }

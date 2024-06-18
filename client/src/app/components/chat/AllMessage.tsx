@@ -10,7 +10,7 @@ export default function AllMessage () {
     return (
         <div className="allMessage">
             {
-                 allMessage.map((el, indx) => <RightMessage key={indx}>{el}</RightMessage>)
+                //  allMessage.map((el, indx) => <RightMessage key={indx}>{el}</RightMessage>)
             }
            
             <LeftMessage></LeftMessage>
