@@ -1,8 +1,8 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const allPost = axios.get(`${process.env.NEXT_PUBLIC_HOST_URL}/post/all`)
-.then((response) => console.log(response));
+// const allPost = axios.get(`${process.env.NEXT_PUBLIC_HOST_URL}/post/all`)
+// .then((response) => console.log(response));
 
 // console.log(allPost)
 const postsAdapter = createEntityAdapter();
