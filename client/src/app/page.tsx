@@ -64,7 +64,7 @@ export default function logIn () {
         </div>
         <div className="create-acc">
           <p>Нет аккаунта?</p>
-          <a className="sing-up" href="./boloto/welcome">
+          <a className="sing-up" href="welcome">
             Создать аккаунт
           </a>
         </div>
