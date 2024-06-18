@@ -15,7 +15,7 @@ export default function logIn () {
   
   const logInBtn = async (e) => {
     e.preventDefault();
-    await axios.post(`${process.env.NEXT_PUBLIC_HOST_URL}/auth/signin`, {email, password});
+    // await axios.post(`${process.env.NEXT_PUBLIC_HOST_URL}/auth/signin`, {email, password});
   }
 
   return (
