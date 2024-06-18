@@ -35,7 +35,7 @@ model Post {
   updatedAt DateTime @updatedAt
   text      String?
   likes     Int[]
-  views     Int @default(0)
+  views     Int[]
   image     String?
 
   userId Int

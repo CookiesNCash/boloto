@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Req, UseGuards } from '@nestjs/common';
+import { Controller, Get, Patch, Post, Req, UseGuards } from '@nestjs/common';
 import { JwtGuard } from 'src/auth/guard';
 import { PostService } from './post.service';
 import { Request } from 'express';
@@ -46,5 +46,12 @@ export class PostController {
   async isPostLiked(@Req() req: Request) {
     const { body } = req;
     return this.postService.isPostLiked(body);
+  }
+
+  @UseGuards(JwtGuard)
+  @Patch('view')
+  async view(@Req() req: Request) {
+    const { body } = req;
+    return this.postService.view(body);
   }
 }

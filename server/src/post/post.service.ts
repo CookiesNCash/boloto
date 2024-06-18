@@ -76,4 +76,23 @@ export class PostService {
     });
     return post.likes.includes(userId);
   }
+
+  async view(dto: LikesDto) {
+    const { userId, postId } = dto;
+    const post = await this.prisma.post.findUnique({
+      where: {
+        id: postId,
+      },
+    });
+    const uniqViews = Array.from(new Set([...post.views, userId]));
+    const updatedPost = await this.prisma.post.update({
+      where: {
+        id: postId,
+      },
+      data: {
+        views: uniqViews,
+      },
+    });
+    return updatedPost;
+  }
 }
