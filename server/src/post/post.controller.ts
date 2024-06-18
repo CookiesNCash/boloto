@@ -26,4 +26,25 @@ export class PostController {
     const { body } = req;
     return this.postService.createPost(body);
   }
+
+  @UseGuards(JwtGuard)
+  @Post('likes')
+  async like(@Req() req: Request) {
+    const { body } = req;
+    return this.postService.like(body);
+  }
+
+  @UseGuards(JwtGuard)
+  @Get('likes')
+  async getLikes(@Req() req: Request) {
+    const { body } = req;
+    return this.postService.getLikes(body);
+  }
+
+  @UseGuards(JwtGuard)
+  @Get('isPostLiked')
+  async isPostLiked(@Req() req: Request) {
+    const { body } = req;
+    return this.postService.isPostLiked(body);
+  }
 }
