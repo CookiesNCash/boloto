@@ -5,7 +5,7 @@ import {
   WebSocketServer,
 } from '@nestjs/websockets';
 
-@WebSocketGateway(80, { cors: true })
+@WebSocketGateway(+process.env.SOCKET_PORT, { cors: true })
 export class ChatGateway {
   @WebSocketServer()
   server;
