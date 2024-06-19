@@ -6,6 +6,7 @@ import Image from 'next/image';
 import DropDownDate from '../../components/DropDownDate';
 import { useState } from 'react';
 import axios from 'axios';
+import { useRouter } from 'next/navigation';
 
 const month = [
   'Январь',
@@ -33,14 +34,23 @@ for (let year = 2023; year >= 1950; year--) {
 }
 
 export default function BasicExample() {
-
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   
   const signUpBtn = async (e) => {
     e.preventDefault();
     console.log({email, password})
-    await axios.post(`${process.env.NEXT_PUBLIC_HOST_URL}/auth/signup`, {email, password});
+
+    try {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_HOST_URL}/auth/signup`, {email, password});
+      // Сохраняем access token в localStorage
+      const { access_token } = response.data;
+      localStorage.setItem('accessToken', access_token);
+      router.push('../');
+    } catch (error) {
+      console.error('Error logging in:', error);
+    }
   }
 
   return (

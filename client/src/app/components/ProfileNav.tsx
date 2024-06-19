@@ -1,5 +1,6 @@
 import { HiDotsVertical } from "react-icons/hi";
 
+
 export default function ProfileNav({ user }) {
   const { id, name, photo } = user;
 

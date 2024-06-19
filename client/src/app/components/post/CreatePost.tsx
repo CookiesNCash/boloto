@@ -6,16 +6,19 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addPost } from "../../../redux/slices/postsSlice";
 import ModalImg from './ModalAddImg';
+import axios from 'axios';
 
 export default function CreatePost() {
   const dispatch = useDispatch();
-
   const [postContent, setPostContent] = useState("");
   const [postImage, setPostImage] = useState("");
+
+  const hostUrl = process.env.NEXT_PUBLIC_HOST_URL;
 
   const handleImageSelect = (image) => {
     setPostImage(image); // Обновление состояния выбранным URL изображения
   };
+  // `{hostUrl}/post/create`
 
   const splitHashTag = () => {
     const hashtagPattern = /#[\S]+/g;
@@ -24,16 +27,17 @@ export default function CreatePost() {
 
     return [textWithoutHashtags, hashtags];
   };
-
-  const createPost = (e) => {
+  
+  const createPost = async (e) => {
     e.preventDefault();
     const [textWithoutHashtags, hashtags] = splitHashTag();
     const newPost = {
-      id: Date.now().toString(),
-      content: textWithoutHashtags,
-      img: postImage,
+      userId: Date.now().toString(),
+      text: textWithoutHashtags,
+      image: postImage,
       hasTag: hashtags,
     };
+    const sendPost = await axios.post(`${hostUrl}/post/create`, newPost)
     dispatch(addPost(newPost));
     setPostContent("");
     setPostImage("")
