@@ -29,6 +29,7 @@ export default function CreatePost() {
     e.preventDefault();
     const [textWithoutHashtags, hashtags] = splitHashTag();
     const newPost = {
+      id: Date.now().toString(),
       content: textWithoutHashtags,
       img: postImage,
       hasTag: hashtags,

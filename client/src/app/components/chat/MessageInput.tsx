@@ -13,12 +13,17 @@ export default function MessageInput () {
     // socket.on('message', ({ data }) => {
     //     dispatch(addMessage({message:data}))
     // })
-
+   
     const sendMessage = (newMessage: string) => {
         // socket.emit('message', {
         // data: newMessage,
         // });
-        dispatch(addMessage({message:newMessage}))
+        const sendMessage = {
+            id: Date.now().toString(),
+            message: newMessage,
+          };
+        dispatch(addMessage(sendMessage))
+        setMessage('');
     }
 
     return (

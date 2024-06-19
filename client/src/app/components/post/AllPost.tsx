@@ -6,6 +6,7 @@ import Post from './Post';
 
 export default function AllPost() {
   const allPost = useSelector(selectAllPosts);
+  console.log(allPost)
   const allPostArray = Object.values(allPost); // Преобразуем объект в массив
   // if (!allPostArray || allPostArray.length === 0) {
   //     return <p>Нет постов для отображения</p>;
@@ -15,7 +16,7 @@ export default function AllPost() {
     <>
       {allPostArray.reverse().map((el, indx) => (
         <Post
-          key={indx}
+          key={el.id}
           text={el.content}
           img={el.img}
           tag={el.hasTag}

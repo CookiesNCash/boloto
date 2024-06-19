@@ -4,16 +4,15 @@ import { selectAllMessage } from "@/redux/slices/messageSlise";
 import { useSelector } from "react-redux";
 
 export default function AllMessage () {
-
     const allMessage = useSelector(selectAllMessage);
-
+    const allMessageArray = Object.values(allMessage);
+    console.log(allMessageArray)
     return (
         <div className="allMessage">
-            {
-                //  allMessage.map((el, indx) => <RightMessage key={indx}>{el}</RightMessage>)
-            }
-           
             <LeftMessage></LeftMessage>
+            {
+                 allMessageArray.map((el, indx) => <RightMessage key={el.id}>{el.message}</RightMessage>)
+            }
         </div>
     )
 }
