@@ -12,15 +12,7 @@ body {
 a {
   text-decoration: none;
 }
-input {
-  all: unset;
-  /* Затем добавьте свои стили */
-  padding: 8px;
-  font-size: 16px;
-  /* Пример дополнительных стилей */
-  border-radius: 4px;
-  text-align: center;
-}
+
 .logo-div{
   margin: 20px;
   text-align: center;
@@ -389,8 +381,18 @@ margin-right: 10px;
   display: flex;
   justify-content: space-between;
 }
+/* input {
+
+} */
 .inputMessage {
   margin-left: 20px;
+  all: unset;
+
+  padding: 8px;
+  font-size: 16px;
+
+  border-radius: 4px;
+  text-align: center;
 }
 .messageInput {
   border-radius: 15px;
