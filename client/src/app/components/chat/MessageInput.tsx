@@ -1,4 +1,4 @@
-import { useState} from "react"
+import { useState, useRef} from "react"
 import { useDispatch } from "react-redux";
 import { addMessage } from "@/redux/slices/messageSlise";
 import { IoIosSend } from "react-icons/io";
@@ -8,22 +8,30 @@ export default function MessageInput () {
     const dispatch = useDispatch();
     const [message, setMessage] = useState('');
 
-    // const socket = io(`${process.env.NEXT_PUBLIC_SOCKET}`);
+    // const messagesEndRef = useRef(null);
+    // const scrollToBottom = () => {
+    //     if (messagesEndRef.current) {
+    //         messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    //     }
+    // };
 
-    // socket.on('message', ({ data }) => {
-    //     dispatch(addMessage({message:data}))
-    // })
+    const socket = io(`${process.env.NEXT_PUBLIC_SOCKET}`);
+
+    socket.on('message', ({ data }) => {
+        dispatch(addMessage({message:data}))
+    })
    
     const sendMessage = (newMessage: string) => {
-        // socket.emit('message', {
-        // data: newMessage,
-        // });
+        socket.emit('message', {
+        data: newMessage,
+        });
         const sendMessage = {
             id: Date.now().toString(),
             message: newMessage,
           };
         dispatch(addMessage(sendMessage))
         setMessage('');
+        // scrollToBottom();
     }
 
     return (
@@ -39,12 +47,3 @@ export default function MessageInput () {
         </div>
     )
 }
-// const socket = io('http://localhost:80');
-// const handleSubmit = () => {
-//     socket.emit('message', {
-//         data: message,
-//     });
-// };
-// socket.on('message', ({ data }) => {
-//     console.log(data)
-// })

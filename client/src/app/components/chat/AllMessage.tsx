@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 export default function AllMessage () {
     const allMessage = useSelector(selectAllMessage);
     const allMessageArray = Object.values(allMessage);
-    console.log(allMessageArray)
+
     return (
         <div className="allMessage">
             <LeftMessage></LeftMessage>
