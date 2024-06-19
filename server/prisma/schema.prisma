@@ -37,6 +37,7 @@ model Post {
   likes     Int[]
   views     Int[]
   image     String?
+  hashTags   String[]
 
   userId Int
   // user   User @relation(fields: [userId], references: [id])
