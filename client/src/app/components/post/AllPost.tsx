@@ -12,6 +12,7 @@ export default function AllPost () {
   const hostUrl = process.env.NEXT_PUBLIC_HOST_URL;
   const accessToken = useSelector(selectAllToken);
   const allPost = useSelector(selectAllPosts);
+  // console.log(allPost)
   const allPostArray = Object.values(allPost); // Преобразуем объект в массив
 
   useEffect( () => {
@@ -26,9 +27,9 @@ export default function AllPost () {
 
   return (
     <>
-      {allPostArray.reverse().map((el, indx) => (
+      {allPostArray.reverse().map((el) => (
         <Post
-          key={el.userId}
+          key={el.id}
           text={el.text}
           img={el.image}
           tag={el.hashTags}

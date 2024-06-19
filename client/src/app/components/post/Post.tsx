@@ -20,7 +20,7 @@ export default function Post({ text, img, author, tag}) {
         <AllHashtag tag={tag} />
       </div>
       <Card.Img variant="top" src={img} />
-      <AllReactions />
+      <AllReactions id={id}/>
     </Card>
   );
 }
