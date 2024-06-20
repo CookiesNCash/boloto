@@ -10,7 +10,7 @@ export default function MessageInput() {
   const [message, setMessage] = useState('');
   const accessToken = useSelector(selectAllToken);
   const userId = Object.keys(accessToken)[0];
-  const soket = process.env.NEXT_PUBLIC_SOCKET
+  const soket = `${process.env.NEXT_PUBLIC_SOCKET}`;
 
   
   useEffect(() => {

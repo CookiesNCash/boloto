@@ -9,12 +9,7 @@ export default function AllMessage() {
   const accessToken = useSelector(selectAllToken);
   const [userId] = Object.keys(accessToken);
 
-  const allMessage: {
-    [key: number]: {
-      id?: number;
-      message?: string;
-    };
-  } = useSelector(selectAllMessage);
+  const allMessage = useSelector(selectAllMessage);
   console.log(allMessage)
   return (
     <div className="allMessage">
