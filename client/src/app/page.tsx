@@ -34,6 +34,8 @@ export default function logIn() {
       const userBody = {
         accessToken:accessToken,
         id: user.id,
+        email: user.email,
+        fistName: user.firstName,
       }
       dispatch(addToken(userBody))
       // localStorage.setItem('accessToken', access_token);

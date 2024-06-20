@@ -11,10 +11,10 @@ export default function AllPost() {
   const dispatch = useDispatch();
   const hostUrl = process.env.NEXT_PUBLIC_HOST_URL;
   const accessToken = useSelector(selectAllToken);
-  const [userId] = Object.keys(accessToken);
 
+  const [userId] = Object.keys(accessToken);
   const allPost = useSelector(selectAllPosts);
-  // console.log(allPost)
+
   const allPostArray: Array<{
     id: number;
     text: string;
@@ -44,9 +44,9 @@ export default function AllPost() {
           postId={el.id}
           userId={userId}
           author={{
-            name: "Андрей",
+            name: accessToken[userId].fistName,
             photo: "../Андрей.jpeg",
-            id: "@teregiray",
+            id: accessToken[userId].email,
           }
         }
           // observe={observeElement}

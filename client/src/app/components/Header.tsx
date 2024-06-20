@@ -7,8 +7,21 @@ import { FiMessageCircle } from 'react-icons/fi';
 import { MdNotificationsNone } from 'react-icons/md';
 import { IoHomeOutline, IoNewspaperOutline } from 'react-icons/io5';
 import ProfileNav from './ProfileNav';
+import { selectAllToken } from '@/redux/slices/tokenSlice';
+import { useSelector } from 'react-redux';
 
 export default function Header() {
+  const hostUrl = process.env.NEXT_PUBLIC_HOST_URL;
+  const accessToken = useSelector(selectAllToken);
+  console.log(accessToken)
+  const [userId] = Object.keys(accessToken);
+  const user = {
+    id: accessToken[userId].email,
+    name:  accessToken[userId].fistName,
+    photo: '../Андрей.jpeg'
+  }
+ 
+
   return (
     <header className="header">
       <div className="nav-header-flex">
@@ -50,7 +63,7 @@ export default function Header() {
 
         <div className="profile-div">
           <ProfileNav
-            user={{ name: 'Андрей', photo: '../Андрей.jpeg', id: '@teregiray' }}
+            user={user}
           />
         </div>
       </div>
