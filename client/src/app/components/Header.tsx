@@ -1,32 +1,31 @@
-import React from "react";
-import Image from "next/image";
+import React from 'react';
+import Image from 'next/image';
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import { FiMessageCircle } from "react-icons/fi";
-import { MdNotificationsNone } from "react-icons/md";
+import { FiMessageCircle } from 'react-icons/fi';
+import { MdNotificationsNone } from 'react-icons/md';
 import { IoHomeOutline, IoNewspaperOutline } from 'react-icons/io5';
-import ProfileNav from "./ProfileNav";
+import ProfileNav from './ProfileNav';
 
 export default function Header() {
   return (
     <header className="header">
-   
       <div className="nav-header-flex">
         <div className="centerDiv">
-        <Navbar expand="xxl" className="bg-body-tertiary header-nav bg-black">
+          <Navbar expand="xxl" className="bg-body-tertiary header-nav bg-black">
             <Container className="header-nav">
-            <div className="header-logo">
-            <Image
-              className="logo"
-             src="/logo.jpeg"
-              alt="Vercel Logo"
-              width={50}
-              height={50}
-              priority
-             />
-            <span className="logo-name">Болото</span>
-           </div>
+              <div className="header-logo">
+                <Image
+                  className="logo"
+                  src="/logo.jpeg"
+                  alt="Vercel Logo"
+                  width={50}
+                  height={50}
+                  priority
+                />
+                <span className="logo-name">Болото</span>
+              </div>
               <Nav className="me-auto">
                 <div className="div-nav">
                   <IoHomeOutline />
@@ -48,11 +47,10 @@ export default function Header() {
             </Container>
           </Navbar>
         </div>
-         
-        
+
         <div className="profile-div">
           <ProfileNav
-            user={{ name: "Андрей", photo: "../Андрей.jpeg", id: "@teregiray" }}
+            user={{ name: 'Андрей', photo: '../Андрей.jpeg', id: '@teregiray' }}
           />
         </div>
       </div>

@@ -7,7 +7,7 @@
     "eslint:recommended",
     "plugin:react/recommended",
     "airbnb",
-    "plugin:prettier/recommended",
+    // "plugin:prettier/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
   "parser": "@typescript-eslint/parser",
@@ -21,18 +21,33 @@
   },
   "plugins": [
     "react",
-    "prettier",
+    // "prettier",
     "@typescript-eslint"
   ],
   "rules": {
-    "quotes": ["error", "single"],
-    "semi": ["error", "always"],
-    "indent": ["error", 2],
-    "no-unused-vars": ["warn"],
+    // "quotes": ["error", "single"],
+    // "semi": ["error", "always"],
+    // "indent": ["error", 2],
+    // "no-unused-vars": ["warn"],
     "no-console": ["off"],
-    "prettier/prettier": ["error"],
+    // "prettier/prettier": ["error"],
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".tsx"] }],
-    "react/prop-types": 0
+    "react/prop-types": 0,
+    "import/extensions": 0,
+    "import/no-unresolved": 0,
+    "func-names": 0,
+    "max-len": 0,
+    "@typescript-eslint/no-unused-vars": 0,
+    "import/no-extraneous-dependencies": 0,
+    "react/react-in-jsx-scope": 0,
+    "no-shadow": 0,
+    "jsx-a11y/anchor-is-valid": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "react/no-array-index-key": 0,
+    "jsx-a11y/no-static-element-interactions": 0,
+    "no-use-before-define": 0,
+    "camelcase": 0,
+    "no-plusplus": 0
   },
   "overrides": [
     {

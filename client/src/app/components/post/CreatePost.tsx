@@ -1,15 +1,15 @@
-import React, { MouseEventHandler, useState } from "react";
+import React, { MouseEventHandler, useState } from 'react';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectAllToken } from '@/redux/slices/tokenSlice';
-import { addPost } from '@/redux/slices/postsSlice';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import { selectAllToken } from '@/redux/slices/tokenSlice';
+import { addPost } from '@/redux/slices/postsSlice';
 import ModalImg from './ModalAddImg';
 
 export default function CreatePost() {
-  const [postContent, setPostContent] = useState("");
-  const [postImage, setPostImage] = useState("");
+  const [postContent, setPostContent] = useState('');
+  const [postImage, setPostImage] = useState('');
 
   const hostUrl = process.env.NEXT_PUBLIC_HOST_URL;
 
@@ -41,22 +41,22 @@ export default function CreatePost() {
     try {
       const response = await axios.post(`${hostUrl}/post/create`, newPost, {
         headers: {
-          'Authorization': `Bearer ${accessToken.undefined}`,
-        }
+          Authorization: `Bearer ${accessToken.undefined}`,
+        },
       });
 
       // Добавляем новый пост в Redux Store
       dispatch(addPost(response.data));
 
       // Очищаем поля ввода после успешного создания поста
-      setPostContent("");
-      setPostImage("");
+      setPostContent('');
+      setPostImage('');
     } catch (error) {
       console.error('Error creating post:', error);
     }
   };
 
-  return ( 
+  return (
     <div className="createPost bg-black">
       <Form.Label htmlFor="">Вылить жижу</Form.Label>
       <Form.Control

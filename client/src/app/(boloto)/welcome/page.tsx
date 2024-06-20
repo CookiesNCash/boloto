@@ -1,12 +1,12 @@
-"use client";
-import React, { MouseEventHandler } from 'react';
+'use client';
+
+import React, { MouseEventHandler, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Image from 'next/image';
-import DropDownDate from '../../components/DropDownDate';
-import { useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
+import DropDownDate from '../../components/DropDownDate';
 
 const month = [
   'Январь',
@@ -37,12 +37,15 @@ export default function BasicExample() {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  
+
   const signUpBtn: MouseEventHandler<HTMLButtonElement> = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_HOST_URL}/auth/signup`, {email, password});
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_HOST_URL}/auth/signup`,
+        { email, password },
+      );
       // Сохраняем access token в localStorage
       const { access_token } = response.data;
       localStorage.setItem('accessToken', access_token);
@@ -50,10 +53,10 @@ export default function BasicExample() {
     } catch (error) {
       console.error('Error logging in:', error);
     }
-  }
+  };
 
   return (
-    <div className="form-div">  
+    <div className="form-div">
       <div className="logo-div">
         <Image
           className="logo"
@@ -75,10 +78,20 @@ export default function BasicExample() {
           </Form.Group>
         </div>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Control type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter email" />
+          <Form.Control
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter email"
+          />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Control type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="New password" />
+          <Form.Control
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="New password"
+          />
         </Form.Group>
         <Form.Group className="mb-3" controlId="repeatFormBasicPassword">
           <Form.Control type="password" placeholder="Repeat password" />
@@ -126,4 +139,3 @@ export default function BasicExample() {
     </div>
   );
 }
- 

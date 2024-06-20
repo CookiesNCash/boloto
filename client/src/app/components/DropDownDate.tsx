@@ -1,8 +1,11 @@
 import React from 'react';
 import { Dropdown } from 'react-bootstrap';
 
-export default function DropDownDate({ arr, name }: {
-  arr: Array<string | number>,
+export default function DropDownDate({
+  arr,
+  name,
+}: {
+  arr: Array<string | number>;
   name: string;
 }) {
   return (

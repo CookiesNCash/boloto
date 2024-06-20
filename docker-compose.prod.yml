@@ -19,7 +19,7 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
-    command: make prod
+    command: npm run build && npm run start
     env_file:
       - .env
     restart: always

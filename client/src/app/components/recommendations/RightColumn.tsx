@@ -1,4 +1,5 @@
-import AllTopics from "./AllTopics";
+import React from 'react';
+import AllTopics from './AllTopics';
 
 export default function () {
   return (

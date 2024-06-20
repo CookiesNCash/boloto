@@ -1,35 +1,36 @@
-"use client";
+'use client';
 
 import axios from 'axios';
-import React, { MouseEventHandler } from 'react';
+import React, { MouseEventHandler, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Image from 'next/image';
-import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addToken } from '@/redux/slices/tokenSlice';
 
-export default function logIn () {
+export default function logIn() {
   const dispatch = useDispatch();
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  
-  
+
   const logInBtn: MouseEventHandler<HTMLButtonElement> = async (e) => {
     e.preventDefault();
-    
+
     try {
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_HOST_URL}/auth/signin`, {
-        email: email,
-        password: password,
-      });
+      const response = await axios.post(
+        `${process.env.NEXT_PUBLIC_HOST_URL}/auth/signin`,
+        {
+          email,
+          password,
+        },
+      );
       // Сохраняем access token в localStorage
       const { accessToken } = response.data;
 
-      dispatch(addToken(accessToken))
+      dispatch(addToken(accessToken));
       // localStorage.setItem('accessToken', access_token);
       router.push('/News');
     } catch (error) {
@@ -53,10 +54,20 @@ export default function logIn () {
       <Form>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <div className="h3">Вход в Болото</div>
-          <Form.Control value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Enter email" />
+          <Form.Control
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            type="email"
+            placeholder="Enter email"
+          />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Control value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" />
+          <Form.Control
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            type="password"
+            placeholder="Password"
+          />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check type="checkbox" label="Сохранить вход" />
@@ -79,4 +90,3 @@ export default function logIn () {
     </div>
   );
 }
-

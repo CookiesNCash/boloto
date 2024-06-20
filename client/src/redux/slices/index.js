@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
-import postsReducer from './postsSlice';
-import messageReducer from './messageSlise'
-import tokenReducer from './tokenSlice';
 import { combineReducers } from 'redux';
+import postsReducer from './postsSlice';
+import messageReducer from './messageSlise';
+import tokenReducer from './tokenSlice';
 
 // Persist configuration
 const persistConfig = {

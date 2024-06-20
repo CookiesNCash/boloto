@@ -15,8 +15,8 @@ const tokenSlice = createSlice({
     addToken: (state, action) => {
       tokenAdapter.removeAll(state);
       tokenAdapter.addOne(state, action.payload);
-    }
-  }
+    },
+  },
 });
 
 // export const selectCategory = (state, category) => Object.values(state.products.entities).filter(el => el.category === category)

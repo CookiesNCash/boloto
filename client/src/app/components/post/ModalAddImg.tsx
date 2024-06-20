@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import { MdOutlinePermMedia } from "react-icons/md";
-import Form from "react-bootstrap/Form";
+import { MdOutlinePermMedia } from 'react-icons/md';
+import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
-export default function ModalImg({ onImageSelect }: {
+export default function ModalImg({
+  onImageSelect,
+}: {
   onImageSelect: (image: string) => void;
 }) {
   const [lgShow, setLgShow] = useState(false);

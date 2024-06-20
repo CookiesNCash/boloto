@@ -1,4 +1,6 @@
-export default function HashTag({ tag }: { tag: string}) {
+import React from 'react';
+
+export default function HashTag({ tag }: { tag: string }) {
   return (
     <a href="#" className="hashTag">
       {tag}

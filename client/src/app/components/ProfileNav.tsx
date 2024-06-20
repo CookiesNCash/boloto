@@ -1,11 +1,14 @@
-import { HiDotsVertical } from "react-icons/hi";
+import React from 'react';
+import { HiDotsVertical } from 'react-icons/hi';
 
-export default function ProfileNav({ user }: {
+export default function ProfileNav({
+  user,
+}: {
   user: {
     name: string;
     photo: string;
     id: string;
-  }
+  };
 }) {
   const { id, name, photo } = user;
 
