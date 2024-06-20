@@ -18,12 +18,16 @@ export default function MessageInput() {
   const socket = io(`${process.env.NEXT_PUBLIC_SOCKET}`);
 
   socket.on('message', ({ data }) => {
-    // dispatch(addMessage({ message: data }))
+    console.log(data)
+    dispatch(addMessage(data))
   });
 
   const sendMessage = (newMessage: string) => {
     socket.emit('message', {
-      data: newMessage,
+      data: {
+        msg: newMessage,
+        userId: 'hello'
+      },
     });
     const sendMessage = {
       id: Date.now().toString(),
