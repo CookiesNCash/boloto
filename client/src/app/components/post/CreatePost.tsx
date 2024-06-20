@@ -14,6 +14,8 @@ export default function CreatePost() {
   const hostUrl = process.env.NEXT_PUBLIC_HOST_URL;
 
   const accessToken = useSelector(selectAllToken);
+  const [userId] = Object.keys(accessToken);
+
   const dispatch = useDispatch();
 
   const handleImageSelect = (image: string) => {
@@ -32,16 +34,18 @@ export default function CreatePost() {
     const [textWithoutHashtags, hashtags] = splitHashTag();
 
     const newPost = {
-      userId: 0,
+      userId: +userId,
       text: textWithoutHashtags,
       image: postImage,
       hashTags: hashtags,
     };
+  
+    console.log(`Bearer ${accessToken[userId].accessToken}`);
 
     try {
       const response = await axios.post(`${hostUrl}/post/create`, newPost, {
         headers: {
-          Authorization: `Bearer ${accessToken.undefined}`,
+          Authorization: `Bearer ${accessToken[userId].accessToken}`,
         },
       });
 
@@ -65,6 +69,7 @@ export default function CreatePost() {
         placeholder="Лей сюда!"
         value={postContent}
         onChange={(e) => setPostContent(e.target.value)}
+        required
       />
       <div className="control-createPost">
         <div className="modal-btn">

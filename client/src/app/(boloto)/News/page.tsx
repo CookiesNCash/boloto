@@ -10,6 +10,7 @@ import RightColumn from '@/app/components/recommendations/RightColumn';
 export default function () {
   return (
     <div className="container-boloto no-select">
+      {/* <pre className="debug"></pre> */}
       <Header />
       <Main>
         <CreatePost />

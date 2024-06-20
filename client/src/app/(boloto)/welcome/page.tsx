@@ -37,6 +37,7 @@ export default function BasicExample() {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
 
   const signUpBtn: MouseEventHandler<HTMLButtonElement> = async (e) => {
     e.preventDefault();
@@ -47,6 +48,7 @@ export default function BasicExample() {
         { email, password },
       );
       // Сохраняем access token в localStorage
+      console.log(response)
       const { access_token } = response.data;
       localStorage.setItem('accessToken', access_token);
       router.push('../');
@@ -71,7 +73,7 @@ export default function BasicExample() {
         <div className="h3">Создать новый аккаунт</div>
         <div className="registration-name">
           <Form.Group className="mb-1" controlId="name">
-            <Form.Control type="email" placeholder="Имя" />
+            <Form.Control type="email" placeholder="Имя" value={name} onChange={(e) => setName(e.target.value)} />
           </Form.Group>
           <Form.Group className="mb-1" controlId="SecondName">
             <Form.Control type="email" placeholder="Фамилия" />
@@ -93,11 +95,9 @@ export default function BasicExample() {
             placeholder="New password"
           />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="repeatFormBasicPassword">
-          <Form.Control type="password" placeholder="Repeat password" />
-        </Form.Group>
+    
 
-        <div className="select gender">
+        {/* <div className="select gender">
           Ваш пол?
           <Form.Group className="radio-group1">
             <Form.Check
@@ -115,15 +115,15 @@ export default function BasicExample() {
               type="radio"
             />
           </Form.Group>
+        </div> */}
+      {/* <div className="select birthday">
+        <p>День рождение</p>
+        <div className="dropDown-group">
+          <DropDownDate arr={month} name="Месяц" />
+          <DropDownDate arr={day} name="День" />
+          <DropDownDate arr={years} name="Год" />
         </div>
-        <div className="select birthday">
-          <p>День рождение</p>
-          <div className="dropDown-group">
-            <DropDownDate arr={month} name="Месяц" />
-            <DropDownDate arr={day} name="День" />
-            <DropDownDate arr={years} name="Год" />
-          </div>
-        </div>
+      </div> */}
 
         <div className="d-grid gap-2">
           <Button variant="primary" type="submit" onClick={(e) => signUpBtn(e)}>

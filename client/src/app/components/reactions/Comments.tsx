@@ -7,7 +7,7 @@ export default function Comments() {
       <div className="btn-reaction-animation blueAn">
         <FaRegCommentAlt />
       </div>
-      <span>100</span>
+      <span>0</span>
     </div>
   );
 }

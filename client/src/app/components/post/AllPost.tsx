@@ -11,6 +11,8 @@ export default function AllPost() {
   const dispatch = useDispatch();
   const hostUrl = process.env.NEXT_PUBLIC_HOST_URL;
   const accessToken = useSelector(selectAllToken);
+  const [userId] = Object.keys(accessToken);
+
   const allPost = useSelector(selectAllPosts);
   // console.log(allPost)
   const allPostArray: Array<{
@@ -24,7 +26,7 @@ export default function AllPost() {
     axios
       .get(`${hostUrl}/post/all`, {
         headers: {
-          Authorization: `Bearer ${accessToken.undefined}`,
+          Authorization: `Bearer ${accessToken[userId].accessToken}`,
         },
       })
       .then((response) => dispatch(addPosts(response.data)))
@@ -39,11 +41,15 @@ export default function AllPost() {
           text={el.text}
           img={el.image}
           tag={el.hashTags}
+          postId={el.id}
+          userId={userId}
           author={{
-            name: 'Иоан',
-            photo: '../Иоан.jpeg',
-            id: '@pro100cowboyyyyyyyJoeBidenyyyyyy',
-          }}
+            name: "Андрей",
+            photo: "../Андрей.jpeg",
+            id: "@teregiray",
+          }
+        }
+          // observe={observeElement}
         />
       ))}
     </>
