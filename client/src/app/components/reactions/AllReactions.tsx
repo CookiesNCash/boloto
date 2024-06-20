@@ -10,7 +10,7 @@ export default function AllReactions({postId, userId}) {
         <Comments />
       </div>
       <div className="static-reactions">
-        <View />
+        <View postId={postId} userId={userId}/>
       </div>
     </div>
   );
