@@ -32,6 +32,9 @@ export default function CreatePost() {
   const createPost: MouseEventHandler<HTMLButtonElement> = async (e) => {
     e.preventDefault();
     const [textWithoutHashtags, hashtags] = splitHashTag();
+    if (textWithoutHashtags === '') {
+      return;
+    }
 
     const newPost = {
       userId: +userId,

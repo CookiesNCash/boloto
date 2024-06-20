@@ -22,9 +22,10 @@
 
 ## prod 2 - Запуск по частям
 
-1. install docker
-2. install nodejs and npm
-3. .env - root
-4. make build-prod-server
-5. .env - client
-6. make build-prod-client
+1. git clone https://github.com/CookiesNCash/boloto.git
+2. install docker
+3. install nodejs and npm
+4. .env - root
+5. make build-prod-server
+6. .env - client
+7. make build-prod-client

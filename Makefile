@@ -14,3 +14,5 @@ bd-dev:
 	docker compose -f docker-compose.bd-dev.yml build
 	docker compose -f docker-compose.bd-dev.yml up
 
+# > /dev/null 2>&1 &
+
