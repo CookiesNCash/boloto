@@ -45,7 +45,7 @@ export default function AllPost() {
           userId={userId}
           author={{
             name: accessToken[userId].fistName,
-            photo: "../Андрей.jpeg",
+            photo: "../frog.jpg",
             id: accessToken[userId].email,
           }
         }

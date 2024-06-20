@@ -15,10 +15,11 @@ export default function Header() {
   const accessToken = useSelector(selectAllToken);
   console.log(accessToken)
   const [userId] = Object.keys(accessToken);
+
   const user = {
     id: accessToken[userId].email,
     name:  accessToken[userId].fistName,
-    photo: '../Андрей.jpeg'
+    photo: '../frog.jpg'
   }
  
 
