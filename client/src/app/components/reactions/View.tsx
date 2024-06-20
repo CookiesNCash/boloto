@@ -1,4 +1,6 @@
 import { GrView } from "react-icons/gr";
+import axios from "axios";
+
 
 export default function View() {
   return (

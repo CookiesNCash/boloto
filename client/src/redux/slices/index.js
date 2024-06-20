@@ -4,6 +4,7 @@ import storage from 'redux-persist/lib/storage'; // defaults to localStorage for
 import postsReducer from './postsSlice';
 import messageReducer from './messageSlise'
 import tokenReducer from './tokenSlice';
+import postsByUserReducer from './postByUser';
 import { combineReducers } from 'redux';
 
 // Persist configuration
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
   posts: postsReducer,
   message: messageReducer,
   token: tokenReducer,
+  postsByUser: postsByUserReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -1,28 +1,28 @@
 'use client';
-import { selectAllPosts } from '@/redux/slices/postsSlice';
+import { selectAllPostsByUser } from '@/redux/slices/postByUser';
 import Post from './Post';
 import axios, { all } from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
-import { addPosts } from '@/redux/slices/postsSlice';
+import { addPostsByUser } from '@/redux/slices/postByUser';
 import { selectAllToken } from '@/redux/slices/tokenSlice';
 import { useEffect } from 'react';
-
-export default function AllPost () {
+// http://localhost:80/post/byUser/:userId
+export default function AllPostByUser () {
   const dispatch = useDispatch();
   const hostUrl = process.env.NEXT_PUBLIC_HOST_URL;
   const accessToken = useSelector(selectAllToken);
   const [userId] = Object.keys(accessToken);
 
-  const allPost = useSelector(selectAllPosts);
+  const allPost = useSelector(selectAllPostsByUser);
   const allPostArray = Object.values(allPost); // Преобразуем объект в массив
 
   useEffect( () => {
-    axios.get(`${hostUrl}/post/all`, {
+    axios.get(`${hostUrl}/post/byUser/${userId}`, {
       headers: {
         'Authorization': `Bearer ${accessToken[userId].accessToken}`
       }
     })
-    .then((response) => dispatch(addPosts(response.data)))
+    .then((response) => dispatch(addPostsByUser(response.data)))
     .catch((error) => console.error('Error fetching posts:', error));
   }, [dispatch]); 
 

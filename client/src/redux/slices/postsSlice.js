@@ -1,5 +1,4 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
-import axios from 'axios';
 
 const postsAdapter = createEntityAdapter();
 const initialState = postsAdapter.getInitialState({

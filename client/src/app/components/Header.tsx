@@ -28,21 +28,21 @@ export default function Header() {
             <span className="logo-name">Болото</span>
            </div>
               <Nav className="me-auto">
-                <div className="div-nav">
+                <div className="div-nav hover-btn-grey">
                   <IoHomeOutline />
-                  <Nav.Link href="#home">Моё болото</Nav.Link>
+                  <Nav.Link href="/home">Моё болото</Nav.Link>
                 </div>
-                <div className="div-nav">
+                <div className="div-nav hover-btn-grey">
                   <FiMessageCircle />
-                  <Nav.Link href="#message">Кваки</Nav.Link>
+                  <Nav.Link href="/chat">Кваки</Nav.Link>
                 </div>
-                <div className="div-nav">
+                <div className="div-nav hover-btn-grey">
                   <MdNotificationsNone />
                   <Nav.Link href="#notifications">Бульки</Nav.Link>
                 </div>
-                <div className="div-nav">
+                <div className="div-nav hover-btn-grey">
                   <IoNewspaperOutline />
-                  <Nav.Link href="#profile">Жижа</Nav.Link>
+                  <Nav.Link href="/News">Жижа</Nav.Link>
                 </div>
               </Nav>
             </Container>

@@ -27,9 +27,12 @@ export default function logIn () {
         password: password,
       });
       // Сохраняем access token в localStorage
-      const { accessToken } = response.data;
-
-      dispatch(addToken(accessToken))
+      const { accessToken, user} = response.data;
+      const userBody = {
+        accessToken:accessToken,
+        id: user.id,
+      }
+      dispatch(addToken(userBody))
       // localStorage.setItem('accessToken', access_token);
       router.push('/News');
     } catch (error) {
