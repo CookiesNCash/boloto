@@ -6,7 +6,6 @@ import Form from 'react-bootstrap/Form';
 import Image from 'next/image';
 import axios from 'axios';
 import { useRouter } from 'next/navigation';
-import DropDownDate from '../../components/DropDownDate';
 
 const month = [
   'Январь',
@@ -37,16 +36,13 @@ export default function BasicExample() {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [name, setName] = useState('');
+  const [firstName, setName] = useState('');
 
   const signUpBtn: MouseEventHandler<HTMLButtonElement> = async (e) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_HOST_URL}/auth/signup`,
-        { email, password },
-      );
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_HOST_URL}/auth/signup`, { email, password, firstName});
       // Сохраняем access token в localStorage
       console.log(response)
       const { access_token } = response.data;
@@ -73,7 +69,7 @@ export default function BasicExample() {
         <div className="h3">Создать новый аккаунт</div>
         <div className="registration-name">
           <Form.Group className="mb-1" controlId="name">
-            <Form.Control type="email" placeholder="Имя" value={name} onChange={(e) => setName(e.target.value)} />
+            <Form.Control type="email" placeholder="Имя" value={firstName} onChange={(e) => setName(e.target.value)} />
           </Form.Group>
           <Form.Group className="mb-1" controlId="SecondName">
             <Form.Control type="email" placeholder="Фамилия" />

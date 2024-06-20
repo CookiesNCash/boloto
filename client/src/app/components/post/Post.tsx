@@ -8,6 +8,8 @@ export default function Post({
   img,
   author,
   tag,
+  postId,
+  userId,
 }: {
   text: string;
   img: string;
@@ -17,7 +19,9 @@ export default function Post({
     name: string;
   };
   tag: Array<string>;
-, postId, userId}) {
+ postId: string;
+ userId: string;
+}) {
   const { id, photo, name } = author;
 
   return (

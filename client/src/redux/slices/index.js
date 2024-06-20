@@ -6,7 +6,6 @@ import postsReducer from './postsSlice';
 import messageReducer from './messageSlise';
 import tokenReducer from './tokenSlice';
 import postsByUserReducer from './postByUser';
-import { combineReducers } from 'redux';
 
 // Persist configuration
 const persistConfig = {

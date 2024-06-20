@@ -25,6 +25,7 @@ export default function logIn() {
         {
           email,
           password,
+          firstName: 'Petya'
         },
       );
       // Сохраняем access token в localStorage
