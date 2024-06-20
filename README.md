@@ -11,6 +11,9 @@
 2. cd server
 3. create .env (take data from .env.example) in server
 4. make dev (server)
+5. cd ../client
+6. create .env (take data from .env.example) in client
+7. npm run dev (client)
 
 ## prod
 
