@@ -18,11 +18,11 @@ export default function AllMessage() {
   console.log(allMessage)
   return (
     <div className="allMessage">
-      {allMessage.map(({ id, message }:{id: string, message: string}, indx: number) => (
+      {allMessage.map(({ id, message, firstName }:{id: string, message: string, firstName:string}, indx: number) => (
         id === userId ? (
-          <RightMessage key={indx}>{message}</RightMessage>
+          <RightMessage name={firstName} key={indx}>{message}</RightMessage>
         ) : (
-          <LeftMessage key={indx}>{message}</LeftMessage>
+          <LeftMessage name={firstName} key={indx}>{message}</LeftMessage>
         )
       ))}
     </div>

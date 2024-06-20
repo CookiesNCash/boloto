@@ -11,7 +11,6 @@ export default function MessageInput() {
   const accessToken = useSelector(selectAllToken);
   const userId = Object.keys(accessToken)[0];
   const soket = process.env.NEXT_PUBLIC_SOCKET
-
   
   useEffect(() => {
     const socket = io(soket);
@@ -20,6 +19,7 @@ export default function MessageInput() {
       const receivedMessage = {
         id: data.userId,
         message: data.msg,
+        firstName: data.firstName
       };
       dispatch(addMessage(receivedMessage));
     });
@@ -36,6 +36,7 @@ export default function MessageInput() {
         data: {
           msg: message,
           userId: userId,
+          firstName: accessToken[userId].fistName
         },
       });
       const newMessage = {

@@ -1,9 +1,18 @@
 import React from 'react';
 
-export default function LeftMessage({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return <div className="bubble left">{children}</div>;
+export default function LeftMessage(props) {
+
+  return (
+    <>
+        <div className="bubble left">
+          {props.children}
+          <div className="post-author">
+        <a className="id-author nameMessage" href="#">
+          {props.name}
+        </a>
+      </div>
+        </div>
+    </>
+  
+);
 }

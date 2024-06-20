@@ -400,9 +400,12 @@ margin-right: 10px;
   display: flex;
   justify-content: space-between;
 }
-/* input {
-
-} */
+.nameMessage{
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+  font-size: 12px;
+  margin-top: 5px;
+}
 .inputMessage {
   margin-left: 20px;
   all: unset;
