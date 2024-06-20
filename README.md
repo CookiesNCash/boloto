@@ -24,5 +24,7 @@
 
 1. install docker
 2. install nodejs and npm
-3. .env
-3. make build-prod-server
+3. .env - root
+4. make build-prod-server
+5. .env - client
+6. make build-prod-client
