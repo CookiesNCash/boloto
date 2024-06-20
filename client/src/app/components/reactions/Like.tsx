@@ -6,7 +6,7 @@ import { selectAllToken } from '@/redux/slices/tokenSlice';
 
 // http://localhost:80/post/isPostLiked/:userId/:postId
 
-export default function Like({postId, userId}) {
+export default function Like({postId, userId}: { postId: string; userId: string }) {
   const [haveLike, setHaveLike] = useState(false);
   const [countLike, setCountLike] = useState(0);
   const hostUrl = process.env.NEXT_PUBLIC_HOST_URL;

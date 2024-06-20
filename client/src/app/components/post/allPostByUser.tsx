@@ -14,7 +14,12 @@ export default function AllPostByUser () {
   const [userId] = Object.keys(accessToken);
 
   const allPost = useSelector(selectAllPostsByUser);
-  const allPostArray = Object.values(allPost); // Преобразуем объект в массив
+  const allPostArray: Array<{
+    id: string;
+    text: string;
+    image: string;
+    hashTags: Array<string>;
+  }> = Object.values(allPost); // Преобразуем объект в массив
 
   useEffect( () => {
     axios.get(`${hostUrl}/post/byUser/${userId}`, {
@@ -24,7 +29,7 @@ export default function AllPostByUser () {
     })
     .then((response) => dispatch(addPostsByUser(response.data)))
     .catch((error) => console.error('Error fetching posts:', error));
-  }, [dispatch]); 
+  }, [dispatch]);
 
   return (
     <>

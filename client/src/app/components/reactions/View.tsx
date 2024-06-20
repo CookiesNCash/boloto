@@ -7,7 +7,7 @@ import { selectAllToken } from "@/redux/slices/tokenSlice";
 import { useEffect } from "react";
 // http://localhost:80/post/view
 
-export default function View({postId, userId}) {
+export default function View({postId, userId}: { postId: string; userId: string }) {
   const [view, setView] = useState([]);
 
   const hostUrl = process.env.NEXT_PUBLIC_HOST_URL;

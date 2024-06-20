@@ -16,7 +16,7 @@ export default function AllPost() {
   const allPost = useSelector(selectAllPosts);
 
   const allPostArray: Array<{
-    id: number;
+    id: string;
     text: string;
     image: string;
     hashTags: Array<string>;
