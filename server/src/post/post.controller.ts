@@ -14,10 +14,10 @@ export class PostController {
   }
 
   @UseGuards(JwtGuard)
-  @Get('byUser')
+  @Get('byUser/:userId')
   async getAllPostsByUser(@Req() req: Request) {
-    const { body } = req;
-    return this.postService.getAllPostsByUser(body);
+    const { userId } = req.params;
+    return this.postService.getAllPostsByUser({ userId: +userId });
   }
 
   @UseGuards(JwtGuard)
@@ -35,17 +35,20 @@ export class PostController {
   }
 
   @UseGuards(JwtGuard)
-  @Get('likes')
+  @Get('likes/:postId')
   async getLikes(@Req() req: Request) {
-    const { body } = req;
-    return this.postService.getLikes(body);
+    const { postId } = req.params;
+    return this.postService.getLikes({ postId: +postId });
   }
 
   @UseGuards(JwtGuard)
-  @Get('isPostLiked')
+  @Get('isPostLiked/:userId/:postId')
   async isPostLiked(@Req() req: Request) {
-    const { body } = req;
-    return this.postService.isPostLiked(body);
+    const { userId, postId } = req.params;
+    return this.postService.isPostLiked({
+      userId: +userId,
+      postId: +postId,
+    });
   }
 
   @UseGuards(JwtGuard)

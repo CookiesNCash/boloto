@@ -55,6 +55,9 @@ export class AuthService {
     email: string,
   ): Promise<{
     accessToken: string;
+    user: {
+      id: number;
+    };
   }> {
     const payload = {
       sub: userId,
@@ -68,6 +71,9 @@ export class AuthService {
 
     return {
       accessToken: token,
+      user: {
+        id: userId,
+      },
     };
   }
 }
