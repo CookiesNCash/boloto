@@ -2,7 +2,7 @@ import Card from 'react-bootstrap/Card';
 import AllReactions from '../reactions/AllReactions';
 import AllHashtag from './AllHashtag';
 
-export default function Post({ text, img, author, tag }) {
+export default function Post({ text, img, author, tag}) {
   const { id, photo, name } = author;
 
   return (
@@ -20,7 +20,7 @@ export default function Post({ text, img, author, tag }) {
         <AllHashtag tag={tag} />
       </div>
       <Card.Img variant="top" src={img} />
-      <AllReactions />
+      <AllReactions id={id}/>
     </Card>
   );
 }

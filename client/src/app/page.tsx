@@ -6,28 +6,35 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Image from 'next/image';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
+import { useDispatch} from 'react-redux';
+import { addToken } from '@/redux/slices/tokenSlice';
 
 export default function logIn () {
-
+  const dispatch = useDispatch();
+  const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   
+  
   const logInBtn = async (e) => {
     e.preventDefault();
+    
     try {
       const response = await axios.post(`${process.env.NEXT_PUBLIC_HOST_URL}/auth/signin`, {
         email: email,
         password: password,
       });
-
-      console.log(response.data);
       // Сохраняем access token в localStorage
-      const { access_token } = response.data;
-      localStorage.setItem('accessToken', access_token);
+      const { accessToken } = response.data;
+
+      dispatch(addToken(accessToken))
+      // localStorage.setItem('accessToken', access_token);
+      router.push('/News');
     } catch (error) {
-      console.error('Error logging in:', error);
       setError('Failed to log in. Please check your credentials.');
+      console.error('Error logging in:', error);
     }
   };
 
