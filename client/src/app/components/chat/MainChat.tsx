@@ -3,7 +3,7 @@ import AllMessage from "./AllMessage";
 import MessageInput from "./MessageInput";
 
 export default function MainChat (){
-    const messagesEndRef = useRef(null);
+    const messagesEndRef = useRef<null | HTMLDivElement>(null);
 
     useEffect(() => {
         scrollToBottom();

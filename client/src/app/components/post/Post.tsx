@@ -2,7 +2,16 @@ import Card from 'react-bootstrap/Card';
 import AllReactions from '../reactions/AllReactions';
 import AllHashtag from './AllHashtag';
 
-export default function Post({ text, img, author, tag}) {
+export default function Post({ text, img, author, tag}: {
+  text: string;
+  img: string;
+  author: {
+    id: string;
+    photo: string;
+    name: string;
+  };
+  tag: Array<string>;
+}) {
   const { id, photo, name } = author;
 
   return (

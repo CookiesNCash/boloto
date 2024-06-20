@@ -1,3 +1,5 @@
-export default function Main({ children }) {
+export default function Main({ children }: {
+  children: React.ReactNode;
+}) {
   return <main className="main">{children}</main>;
 }

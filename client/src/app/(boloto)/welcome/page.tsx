@@ -1,5 +1,5 @@
 "use client";
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Image from 'next/image';
@@ -38,7 +38,7 @@ export default function BasicExample() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   
-  const signUpBtn = async (e) => {
+  const signUpBtn: MouseEventHandler<HTMLButtonElement> = async (e) => {
     e.preventDefault();
 
     try {

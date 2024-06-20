@@ -16,5 +16,5 @@ const messageSlice = createSlice({
 
 // export const selectCategory = (state, category) => Object.values(state.products.entities).filter(el => el.category === category)
 export const selectAllMessage = (state) => state.message.entities;
-export const {  addMessage } = messageSlice.actions;
+export const { addMessage } = messageSlice.actions;
 export default messageSlice.reducer;

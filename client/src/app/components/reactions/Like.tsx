@@ -6,7 +6,7 @@ import cn from 'classnames';
 // http://localhost:80/post/likes
 
 
-export default function Like({id}) {
+export default function Like({id}: { id: string }) {
   const [haveLike, setHaveLike] = useState(false);
   const hostUrl = process.env.NEXT_PUBLIC_HOST_URL;
   const accessToken = useSelector(selectAllToken);

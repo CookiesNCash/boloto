@@ -4,13 +4,15 @@ import { MdOutlinePermMedia } from "react-icons/md";
 import Form from "react-bootstrap/Form";
 import Button from 'react-bootstrap/Button';
 
-export default function ModalImg({ onImageSelect }) {
+export default function ModalImg({ onImageSelect }: {
+  onImageSelect: (image: string) => void;
+}) {
   const [lgShow, setLgShow] = useState(false);
   const [url, setUrl] = useState('');
 
   const handleClose = () => setLgShow(false);
 
-  const handleImageSelect = (image) => {
+  const handleImageSelect = (image: string) => {
     onImageSelect(image); // Вызов функции обратного вызова с выбранным изображением
     handleClose();
   };

@@ -1,7 +1,7 @@
 "use client";
 
 import axios from 'axios';
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Image from 'next/image';
@@ -18,7 +18,7 @@ export default function logIn () {
   const [error, setError] = useState('');
   
   
-  const logInBtn = async (e) => {
+  const logInBtn: MouseEventHandler<HTMLButtonElement> = async (e) => {
     e.preventDefault();
     
     try {

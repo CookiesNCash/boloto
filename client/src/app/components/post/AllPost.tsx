@@ -1,7 +1,7 @@
 'use client';
 import { selectAllPosts } from '@/redux/slices/postsSlice';
 import Post from './Post';
-import axios, { all } from 'axios';
+import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { addPosts } from '@/redux/slices/postsSlice';
 import { selectAllToken } from '@/redux/slices/tokenSlice';
@@ -13,7 +13,12 @@ export default function AllPost () {
   const accessToken = useSelector(selectAllToken);
   const allPost = useSelector(selectAllPosts);
   // console.log(allPost)
-  const allPostArray = Object.values(allPost); // Преобразуем объект в массив
+  const allPostArray: Array<{
+    id: number;
+    text: string;
+    image: string;
+    hashTags: Array<string>;
+  }> = Object.values(allPost); // Преобразуем объект в массив
 
   useEffect( () => {
     axios.get(`${hostUrl}/post/all`, {

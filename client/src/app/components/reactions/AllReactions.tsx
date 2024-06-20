@@ -2,7 +2,7 @@ import Like from './Like';
 import Comments from './Comments';
 import View from './View';
 
-export default function AllReactions({id}) {
+export default function AllReactions({id}: { id: string }) {
   return (
     <div className="all-reactions">
       <div className="btn-reactions">

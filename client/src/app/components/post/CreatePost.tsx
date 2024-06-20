@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { MouseEventHandler, useState } from "react";
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectAllToken } from '@/redux/slices/tokenSlice';
@@ -16,7 +16,7 @@ export default function CreatePost() {
   const accessToken = useSelector(selectAllToken);
   const dispatch = useDispatch();
 
-  const handleImageSelect = (image) => {
+  const handleImageSelect = (image: string) => {
     setPostImage(image);
   };
 
@@ -27,7 +27,7 @@ export default function CreatePost() {
     return [textWithoutHashtags, hashtags];
   };
 
-  const createPost = async (e) => {
+  const createPost: MouseEventHandler<HTMLButtonElement> = async (e) => {
     e.preventDefault();
     const [textWithoutHashtags, hashtags] = splitHashTag();
 

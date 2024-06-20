@@ -18,7 +18,7 @@ export default function MessageInput () {
     const socket = io(`${process.env.NEXT_PUBLIC_SOCKET}`);
 
     socket.on('message', ({ data }) => {
-        dispatch(addMessage({message:data}))
+        // dispatch(addMessage({ message: data }))
     })
    
     const sendMessage = (newMessage: string) => {
