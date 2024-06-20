@@ -42,9 +42,9 @@ export default function AllPostByUser () {
           postId={el.id}
           userId={userId}
           author={{
-            name: "Андрей",
-            photo: "../Андрей.jpeg",
-            id: "@teregiray",
+            name: accessToken[userId].fistName,
+            photo: "../frog.jpg",
+            id: accessToken[userId].email,
           }
         }
           // observe={observeElement}
