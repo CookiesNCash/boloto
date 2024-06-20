@@ -1,5 +1,4 @@
 prod:
-	npm ci
 	npx prisma migrate deploy
 	npm run start:prod
 
