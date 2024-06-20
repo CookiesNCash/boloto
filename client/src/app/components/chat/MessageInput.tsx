@@ -1,41 +1,49 @@
-import React, { useState, useRef } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { IoIosSend } from 'react-icons/io';
 import io from 'socket.io-client';
-import { addMessage } from '@/redux/slices/messageSlise';
+import { addMessage } from '@/redux/slices/messageSlise'; 
+import { selectAllToken } from '@/redux/slices/tokenSlice';
 
 export default function MessageInput() {
   const dispatch = useDispatch();
   const [message, setMessage] = useState('');
+  const accessToken = useSelector(selectAllToken);
+  const userId = Object.keys(accessToken)[0];
+  const soket = process.env.NEXT_PUBLIC_SOCKET
 
-  // const messagesEndRef = useRef(null);
-  // const scrollToBottom = () => {
-  //     if (messagesEndRef.current) {
-  //         messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
-  //     }
-  // };
+  
+  useEffect(() => {
+    const socket = io(soket);
 
-  const socket = io(`${process.env.NEXT_PUBLIC_SOCKET}`);
-
-  socket.on('message', ({ data }) => {
-    console.log(data)
-    dispatch(addMessage(data))
-  });
-
-  const sendMessage = (newMessage: string) => {
-    socket.emit('message', {
-      data: {
-        msg: newMessage,
-        userId: 'hello'
-      },
+    socket.on('message', ({ data }) => {
+      const receivedMessage = {
+        id: data.userId,
+        message: data.msg,
+      };
+      dispatch(addMessage(receivedMessage));
     });
-    const sendMessage = {
-      id: Date.now().toString(),
-      message: newMessage,
+
+    return () => {
+      socket.disconnect();
     };
-    dispatch(addMessage(sendMessage));
-    setMessage('');
-    // scrollToBottom();
+  }, [dispatch]);
+
+  const sendMessage = () => {
+    if (message.trim()) {
+      const socket = io(soket);
+      socket.emit('message', {
+        data: {
+          msg: message,
+          userId: userId,
+        },
+      });
+      const newMessage = {
+        id: userId,
+        message: message,
+      };
+      setMessage('');
+    }
   };
 
   return (
@@ -48,10 +56,11 @@ export default function MessageInput() {
             onChange={(e) => setMessage(e.target.value)}
             type="text"
             placeholder="Новый квак"
+            onKeyPress={(e) => e.key === 'Enter' && sendMessage()}
           />
           <div
             className="btn hover-btn-grey"
-            onClick={() => sendMessage(message)}
+            onClick={sendMessage}
           >
             <IoIosSend />
           </div>

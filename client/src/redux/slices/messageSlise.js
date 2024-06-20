@@ -1,19 +1,22 @@
-import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-const messageAdapter = createEntityAdapter();
-const initialState = messageAdapter.getInitialState({
-  ids: [],
-});
+const initialState = {
+  entities: [],
+};
 
 const messageSlice = createSlice({
   name: 'message',
   initialState,
   reducers: {
-    addMessage: messageAdapter.addOne,
+    addMessage: (state, action) => {
+      state.entities.push(action.payload);
+    },
+    // Add more reducers if needed, e.g., removeMessage, updateMessage, etc.
   },
 });
 
-// export const selectCategory = (state, category) => Object.values(state.products.entities).filter(el => el.category === category)
+// Selector to select all messages
 export const selectAllMessage = (state) => state.message.entities;
+
 export const { addMessage } = messageSlice.actions;
 export default messageSlice.reducer;
