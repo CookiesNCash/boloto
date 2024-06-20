@@ -42,7 +42,6 @@ export default function CreatePost() {
       email: accessToken[userId].email,
     };
   
-    console.log(`Bearer ${accessToken[userId].accessToken}`);
 
     try {
       const response = await axios.post(`${hostUrl}/post/create`, newPost, {

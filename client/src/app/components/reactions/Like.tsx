@@ -34,7 +34,7 @@ export default function Like({postId, userId}: { postId: string; userId: string 
       headers: {
         'Authorization': `Bearer ${accessToken[userId].accessToken}`,
       }
-    }).then((console.log));
+    });
   }
  
   const classLikeIcon = cn("heart-icon", {

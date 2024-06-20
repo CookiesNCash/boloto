@@ -44,7 +44,6 @@ export default function BasicExample() {
     try {
       const response = await axios.post(`${process.env.NEXT_PUBLIC_HOST_URL}/auth/signup`, { email, password, firstName});
       // Сохраняем access token в localStorage
-      console.log(response)
       const { access_token } = response.data;
       localStorage.setItem('accessToken', access_token);
       router.push('../');

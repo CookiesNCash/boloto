@@ -8,16 +8,16 @@ export default function () {
         <span>Популярные хештеги</span>
       </div>
       <div className="allTopics">
-        <Topic />
-        <Topic />
-        <Topic />
-        <Topic />
-        <Topic />
-        <Topic />
-        <Topic />
-        <Topic />
-        <Topic />
-        <Topic />
+        <Topic text={'hexlet'}/>
+        <Topic text={'bts'}/>
+        <Topic text={'Авалон'}/>
+        <Topic text={'БолотоХайп!'}/>
+        <Topic text={'football'}/>
+        <Topic text={'УраганвМоскве'}/>
+        <Topic text={'спб'}/>
+        <Topic text={'тактикиАвалона'}/>
+        <Topic text={'почемуПуджИмба'}/>
+        <Topic text={'Bitcoin'}/>
       </div>
     </div>
   );

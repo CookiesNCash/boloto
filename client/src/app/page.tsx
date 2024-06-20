@@ -29,7 +29,6 @@ export default function logIn() {
         },
       );
       // Сохраняем access token в localStorage
-      console.log(response.data)
       const { accessToken, user} = response.data;
       const userBody = {
         accessToken:accessToken,
