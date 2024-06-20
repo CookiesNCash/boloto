@@ -1,7 +1,9 @@
 prod:
-	npm run start
+	npx prisma migrate deploy
+	npm run start:prod
 
 dev:
+	npx prisma migrate dev
 	npm run start:dev
 
 migrate-dev:

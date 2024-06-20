@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  server:
+    container_name: server
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    command: make prod
+    env_file:
+      - .env
+    restart: always
+    ports:
+      - '${NEST_PORT}:${NEST_PORT}'
+      - '${SOCKET_PORT}:${SOCKET_PORT}'
+    depends_on:
+      - db
+
+  client:
+    container_name: client
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    command: make prod
+    env_file:
+      - .env
+    restart: always
+    ports:
+      - '${CLIENT_PORT}:${CLIENT_PORT}'
+    depends_on:
+      - db
+
+  db:
+    container_name: db
+    image: postgres:13
+    env_file:
+      - .env
+    restart: always
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data 

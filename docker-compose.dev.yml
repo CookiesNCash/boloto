@@ -1,0 +1,44 @@
+version: "3.8"
+
+services:
+  server:
+    container_name: server
+    build:
+      context: ./server
+      dockerfile: Dockerfile.dev
+    command: make dev
+    env_file:
+      - .env.dev
+    restart: always
+    ports:
+      - '${NEST_PORT}:${NEST_PORT}'
+      - '${SOCKET_PORT}:${SOCKET_PORT}'
+    depends_on:
+      - db
+
+  client:
+    container_name: client
+    build:
+      context: ./client
+      dockerfile: Dockerfile.dev
+    command: npm run dev
+    env_file:
+      - .env
+    restart: always
+    ports:
+      - '${CLIENT_PORT}:${CLIENT_PORT}'
+    depends_on:
+      - db
+
+  db:
+    container_name: db
+    image: postgres:13
+    ports:
+      - 5434:5432
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: test
+    # volumes:
+    #   - ./pgdata-dev:/var/lib/postgresql/data 
