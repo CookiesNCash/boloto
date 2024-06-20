@@ -14,7 +14,6 @@ export default function AllPost() {
 
   const [userId] = Object.keys(accessToken);
   const allPost = useSelector(selectAllPosts);
-  console.log(allPost)
   const allPostArray: Array<{
     id: string;
     text: string;

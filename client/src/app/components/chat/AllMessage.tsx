@@ -10,7 +10,6 @@ export default function AllMessage() {
   const [userId] = Object.keys(accessToken);
 
   const allMessage = useSelector(selectAllMessage);
-  console.log(allMessage)
   return (
     <div className="allMessage">
       {allMessage.map(({ id, message, firstName }:{id: string, message: string, firstName:string}, indx: number) => (
