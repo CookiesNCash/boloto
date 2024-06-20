@@ -1,7 +1,6 @@
 import React from 'react';
 
-export default function LeftMessage(props) {
-
+export default function LeftMessage(props: {children:React.ReactNode, name: string}) {
   return (
     <>
         <div className="bubble left">
@@ -13,6 +12,5 @@ export default function LeftMessage(props) {
       </div>
         </div>
     </>
-  
 );
 }

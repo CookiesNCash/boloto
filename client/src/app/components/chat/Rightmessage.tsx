@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function RightMessage(props) {
+export default function RightMessage(props: {children: React.ReactNode, name: string}) {
 
   return <div className="bubble right">
     {props.children}
@@ -11,4 +11,3 @@ export default function RightMessage(props) {
       </div>
     </div>;
 }
-// children}:{children: React.ReactNode;}
