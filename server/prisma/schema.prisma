@@ -39,6 +39,9 @@ model Post {
   image     String?
   hashTags   String[]
 
+  email String
+  firstName String
+
   userId Int
   // user   User @relation(fields: [userId], references: [id])
 

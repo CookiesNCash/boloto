@@ -3,4 +3,6 @@ export class CreatePostDto {
   text?: string;
   image?: string;
   hashTags?: string[];
+  email?: string;
+  firstName?: string;
 }
