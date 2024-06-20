@@ -44,6 +44,7 @@ export default function BasicExample() {
     try {
       const response = await axios.post(`${process.env.NEXT_PUBLIC_HOST_URL}/auth/signup`, {email, password});
       // Сохраняем access token в localStorage
+      console.log(response)
       const { access_token } = response.data;
       localStorage.setItem('accessToken', access_token);
       router.push('../');
@@ -80,11 +81,9 @@ export default function BasicExample() {
         <Form.Group className="mb-3" controlId="formBasicPassword">
           <Form.Control type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="New password" />
         </Form.Group>
-        <Form.Group className="mb-3" controlId="repeatFormBasicPassword">
-          <Form.Control type="password" placeholder="Repeat password" />
-        </Form.Group>
+    
 
-        <div className="select gender">
+        {/* <div className="select gender">
           Ваш пол?
           <Form.Group className="radio-group1">
             <Form.Check
@@ -102,15 +101,15 @@ export default function BasicExample() {
               type="radio"
             />
           </Form.Group>
+        </div> */}
+      {/* <div className="select birthday">
+        <p>День рождение</p>
+        <div className="dropDown-group">
+          <DropDownDate arr={month} name="Месяц" />
+          <DropDownDate arr={day} name="День" />
+          <DropDownDate arr={years} name="Год" />
         </div>
-        <div className="select birthday">
-          <p>День рождение</p>
-          <div className="dropDown-group">
-            <DropDownDate arr={month} name="Месяц" />
-            <DropDownDate arr={day} name="День" />
-            <DropDownDate arr={years} name="Год" />
-          </div>
-        </div>
+      </div> */}
 
         <div className="d-grid gap-2">
           <Button variant="primary" type="submit" onClick={(e) => signUpBtn(e)}>

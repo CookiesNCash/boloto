@@ -69,6 +69,7 @@ export default function CreatePost() {
         placeholder="Лей сюда!"
         value={postContent}
         onChange={(e) => setPostContent(e.target.value)}
+        required
       />
       <div className="control-createPost">
         <div className="modal-btn">

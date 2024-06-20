@@ -55,6 +55,7 @@ a {
 .registration-name {
   display: flex;
   gap: 10px;
+  margin-bottom: 10px;
 }
 .radio-group1 {
   text-align: center;
