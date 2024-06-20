@@ -1,5 +1,4 @@
 import { createSlice, createEntityAdapter } from '@reduxjs/toolkit';
-import axios from 'axios';
 
 const messageAdapter = createEntityAdapter();
 const initialState = messageAdapter.getInitialState({
