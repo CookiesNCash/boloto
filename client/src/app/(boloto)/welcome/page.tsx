@@ -37,6 +37,7 @@ export default function BasicExample() {
   const router = useRouter();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
   
   const signUpBtn = async (e) => {
     e.preventDefault();
@@ -69,7 +70,7 @@ export default function BasicExample() {
         <div className="h3">Создать новый аккаунт</div>
         <div className="registration-name">
           <Form.Group className="mb-1" controlId="name">
-            <Form.Control type="email" placeholder="Имя" />
+            <Form.Control type="email" placeholder="Имя" value={name} onChange={(e) => setName(e.target.value)} />
           </Form.Group>
           <Form.Group className="mb-1" controlId="SecondName">
             <Form.Control type="email" placeholder="Фамилия" />
