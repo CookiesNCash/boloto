@@ -23,7 +23,6 @@ export default function AllPost() {
     firstName: string;
     email: string;
   }> = Object.values(allPost); // Преобразуем объект в массив
-  console.log(allPost)
   useEffect(() => {
     axios
       .get(`${hostUrl}/post/all`, {

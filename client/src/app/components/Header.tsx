@@ -13,7 +13,6 @@ import { useSelector } from 'react-redux';
 export default function Header() {
   const hostUrl = process.env.NEXT_PUBLIC_HOST_URL;
   const accessToken = useSelector(selectAllToken);
-  console.log(accessToken)
   const [userId] = Object.keys(accessToken);
 
   const user = {

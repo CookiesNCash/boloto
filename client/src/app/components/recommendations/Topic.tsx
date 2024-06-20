@@ -1,10 +1,10 @@
 import React from 'react';
 
-export default function () {
+export default function ({text}:string) {
   return (
     <div className="trend hover-btn-grey">
-      <span>#bts</span>
-      <span className="count-post">23 поста</span>
+      <span>#{text}</span>
+      <span className="count-post">1 пост</span>
     </div>
   );
 }

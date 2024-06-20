@@ -25,7 +25,6 @@ export default function View({postId, userId}: { postId: string; userId: string 
     "userId": +userId,
     "postId": +postId,
   }
-  // console.log(`${hostUrl}/post/view`)
 
   return (
     <div className="reactions view">
