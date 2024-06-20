@@ -2,7 +2,7 @@
 
 ## dev
 
-1. create .env.dev (take data from .env.example)
+1. create .env (take data from .env.example)
 2. make build-dev
 
 ## prod
