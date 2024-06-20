@@ -38,6 +38,8 @@ export default function CreatePost() {
       text: textWithoutHashtags,
       image: postImage,
       hashTags: hashtags,
+      firstName: accessToken[userId].fistName,
+      email: accessToken[userId].email,
     };
   
     console.log(`Bearer ${accessToken[userId].accessToken}`);

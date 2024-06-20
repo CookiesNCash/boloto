@@ -20,8 +20,10 @@ export default function AllPost() {
     text: string;
     image: string;
     hashTags: Array<string>;
+    firstName: string;
+    email: string;
   }> = Object.values(allPost); // Преобразуем объект в массив
-
+  console.log(allPost)
   useEffect(() => {
     axios
       .get(`${hostUrl}/post/all`, {
@@ -44,12 +46,11 @@ export default function AllPost() {
           postId={el.id}
           userId={userId}
           author={{
-            name: accessToken[userId].fistName,
+            name: el.firstName,
             photo: "../frog.jpg",
-            id: accessToken[userId].email,
+            id: el.email,
           }
         }
-          // observe={observeElement}
         />
       ))}
     </>
