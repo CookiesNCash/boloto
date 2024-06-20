@@ -15,7 +15,16 @@
 6. create .env (take data from .env.example) in client
 7. npm run dev (client)
 
-## prod
+## prod 1 - Запускается сразу всё
 
 1. create .env (take data from .env.example)
 2. make build-prod
+
+## prod 2 - Запуск по частям
+
+1. install docker
+2. install nodejs and npm
+3. .env - root
+4. make build-prod-server
+5. .env - client
+6. make build-prod-client
