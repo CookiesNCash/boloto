@@ -25,7 +25,9 @@
 1. git clone https://github.com/CookiesNCash/boloto.git
 2. install docker
 3. install nodejs and npm
-4. .env - root
-5. make build-prod-server
-6. .env - client
-7. make build-prod-client
+4. install nest - npm install -g @nestjs/cli
+5. npm ci on server and client
+5. .env - root
+6. make build-prod-server
+7. .env - client
+8. make build-prod-client
